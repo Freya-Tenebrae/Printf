@@ -14,4 +14,14 @@ Test effectuer sur un `MacBook Air (M1, 2020)` sous `macOS Big Sur Version 11.2.
 
 Test done on a `MacBook Air (M1, 2020)` under `macOS Big Sur Version 11.2.3`
 
-TODO%    
+> [printf-unit-test](https://github.com/alelievr/printf-unit-test) by [alelievr](https://github.com/alelievr)
+
+![results](https://github.com/Freya-Tenebrae/Libft/blob/main/results_printf-unit-test.png)
+
+> [printf-tester](https://github.com/AntoineBourin/printf-tester) by [AntoineBourin](https://github.com/AntoineBourin)
+
+![results](https://github.com/Freya-Tenebrae/Libft/blob/main/results_printf-tester.png)
+
+> [printfTester](https://github.com/Tripouille/printfTester) by [Tripouille](https://github.com/Tripouille)
+
+![results](https://github.com/Freya-Tenebrae/Libft/blob/main/results_printfTester.png)
