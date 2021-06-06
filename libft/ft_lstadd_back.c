@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 02:15:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/20 22:45:22 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:26:45 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *tmplst;
+	t_list	*tmplst;
 
 	if (alst != 0)
 	{

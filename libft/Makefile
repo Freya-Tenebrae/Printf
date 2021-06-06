@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/04/24 00:36:06 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/05/20 12:40:30 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,8 +71,8 @@ SRC_BONUS=ft_swap_bonus.c \
 	ft_putstr_bonus.c \
 	ft_putendl_bonus.c \
 	ft_putnbr_bonus.c
-OBJS=${SRC:.c=.o}
-OBJS_BONUS=${SRC_BONUS:.c=.o}
+OBJS=$(SRC:.c=.o)
+OBJS_BONUS=$(SRC_BONUS:.c=.o)
 
 HEADER=includes
 FOLDER=srcs
@@ -81,22 +81,22 @@ CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OBJS}
-	ar -rcs ${NAME} ${OBJS}
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	${CC} -c ${CFLAGS} -o $@ $< -I ${HEADER}
+	$(CC) -c $(CFLAGS) -o $@ $< -I $(HEADER)
 
-bonus: ${OBJS} ${OBJS_BONUS}
-	ar -rcs ${NAME} ${OBJS} ${OBJS_BONUS}
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
-	${RM} ${OBJS} ${OBJS_BONUS}
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	${RM} libft.a
+	$(RM) libft.a
 
 re: fclean all
 

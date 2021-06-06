@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:03:59 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/19 16:41:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:41:24 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_getlen(int n)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int			len;
 	int			i;
@@ -36,7 +36,8 @@ char		*ft_itoa(int n)
 
 	nb = n;
 	len = ft_getlen(nb);
-	if (!(str = malloc((len + 1) * sizeof(char))))
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
 		return (0);
 	str[len] = '\0';
 	i = 0;

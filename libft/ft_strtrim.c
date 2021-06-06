@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 23:20:24 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/19 16:44:03 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:44:04 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	while (len > 0 && ft_strchr(set, s1[len]) != 0)
 		len--;
-	res = ft_substr((char*)s1, 0, len + 1);
+	res = ft_substr((char *)s1, 0, len + 1);
 	return (res);
 }

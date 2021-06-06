@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 02:15:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/20 21:05:47 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:31:18 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	if (lst == 0)
 		return (0);

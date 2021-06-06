@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 19:15:19 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/19 16:55:30 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:39:40 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = -1;
 	if (len == 0)

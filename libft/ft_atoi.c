@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 23:20:24 by freya             #+#    #+#             */
-/*   Updated: 2021/04/19 16:40:36 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:13:28 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_setresult(size_t value, int sign, int i)
 	return (value * sign);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
@@ -33,8 +33,8 @@ int			ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	value = 0;
-	while (*str != '\0' && (*str == ' ' || *str == '\t' || *str == '\n' ||
-		*str == '\v' || *str == '\f' || *str <= '\r'))
+	while (*str != '\0' && (*str == ' ' || *str == '\t' || *str == '\n'
+			|| *str == '\v' || *str == '\f' || *str <= '\r'))
 		str++;
 	if (*str != '\0' && str[i] == '-')
 	{

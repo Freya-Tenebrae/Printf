@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:58:00 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/19 16:54:36 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:42:47 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == 0 || s2 == 0)
 		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(res = malloc(len * sizeof(char))))
+	res = malloc(len * sizeof(char));
+	if (!res)
 		return (0);
 	ft_bzero(res, len);
 	i = -1;

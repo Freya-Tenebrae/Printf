@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 23:20:24 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/04/19 16:55:49 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:42:50 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	*ft_memrchr(const void *s, int c, size_t n)
 	return (0);
 }
 
-char		*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	return (ft_memrchr(s, c, ft_strlen(s) + 1));
 }
