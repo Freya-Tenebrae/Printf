@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 00:34:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/08 11:20:45 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:25:24 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int  ft_updateoutput(char **result, char **str, int i, int j)
     if (j == 0)
         return (0);
     tmp = *str;
-    while (i-- >= 0)
+    while (i-- > 0)
         tmp++;
     resultpart = ft_strndup(tmp, j);
     if (!resultpart)
