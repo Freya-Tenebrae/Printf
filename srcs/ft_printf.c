@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 00:34:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/08 11:25:24 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:45:32 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,53 +19,57 @@ static int  ft_freeprintf(char **result, char **str)
     return (-1);
 }
 
-// static char *ft_flag_interpretation(char *flag, va_list *ap)
+// static char *ft_flag_interpretation(char *flag, va_list *arg)
 // {
-//     (void)flag;
-//     (void)ap;
-//     return(NULL);
+//     (void)arg;
+//     ft_putstr_fd("\n", 1);
+//     ft_putstr_fd(flag, 1);
+//     ft_putstr_fd("\n", 1);
+//     return(flag);
 // }
 
-// static int  ft_getflags(char *str, int i, char **flag)
-// {
-//     int     j;
-//     char    *c_conversion;
+static int  ft_getflags(char *str, int i, char **flag)
+{
+	// TODO correcly (check photo on iphone)
+    int     j;
+    char    *c_conversion;
 
-//     j = 0;
-//     c_conversion = NULL;
-//     while (c_conversion == NULL)
-//     {
-//         // check is the flag are valid;
-//         j++;
-//         c_conversion = ft_strchr("cspdiuxnfgeX%", str[i + j]);
-//     }
-//     *flag = ft_strndup(&(str)[i], j); // check priority for &
-//     j++;
-//     return(j);
-// }
+    j = 0;
+    c_conversion = NULL;
+    while (c_conversion == NULL)
+    {
+        // check if the flag are valid;
+        j++;
+        c_conversion = ft_strchr("cspdiuxnfgeX%", str[i + j]);
+    }
+    *flag = ft_strndup(&(str)[i], j);
+    return(j);
+}
 
-// static int  ft_parsing(char **result, char **str, va_list *ap, int *i)
-// {
-//     int     j;
-//     char    *flag;
-//     char    *portion_to_add;
-//     char    *tmp;
+static int  ft_parsing(char **result, char **str, va_list *arg, int *i)
+{
+    int     j;
+    char    *flag;
+    // char    *portion_to_add;
+    // char    *tmp;
 
-//     j = ft_getflags(*str, *i, &flag);
-//     if (j < 0)
-//         ft_freeprintf(result, str);
-//     i = i + j;
-//     portion_to_add = ft_flag_interpretation(flag, ap);
-//     if (portion_to_add == NULL)
-//         ft_freeprintf(result, str);
-//     tmp = ft_strjoin(*result, portion_to_add);
-//     free(portion_to_add);
-//     if (tmp == NULL)
-//         ft_freeprintf(result, str);
-//     free(*result);
-//     *result = tmp;
-//     return (0);
-// }
+    (void)arg;
+
+    j = ft_getflags(*str, *i, &flag);
+    if (j < 0)
+        ft_freeprintf(result, str);
+    // *i = *i + j;
+    // portion_to_add = ft_flag_interpretation(flag, arg);
+    // if (portion_to_add == NULL)
+    //     ft_freeprintf(result, str);
+    // tmp = ft_strjoin(*result, portion_to_add);
+    // free(portion_to_add);
+    // if (tmp == NULL)
+    //     ft_freeprintf(result, str);
+    // free(*result);
+    // *result = tmp;
+    return (0);
+}
 
 static int  ft_updateoutput(char **result, char **str, int i, int j)
 {
@@ -92,13 +96,13 @@ static int  ft_updateoutput(char **result, char **str, int i, int j)
     return (0);
 }
 
-static int	ft_get_results(char **str, va_list *ap)
+static int	ft_get_results(char **str, va_list *arg)
 {
 	char	*result;
 	int		i;
 	int		j;
 
-	(void)ap;
+	(void)arg;
 
 	result = ft_strdup("");
 	i = 0;
@@ -113,8 +117,8 @@ static int	ft_get_results(char **str, va_list *ap)
 		if ((*str)[i] == '%')
 		{
 			i++;
-			//if (ft_parsing(&result, str, ap, &i) != 0)
-			//	return (-1);
+			if (ft_parsing(&result, str, arg, &i) != 0)
+				return (-1);
 		}
 	}
 	ft_putstr_fd(result, 1);
