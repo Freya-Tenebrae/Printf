@@ -15,20 +15,59 @@
 
 int main()
 {
-    printf("|test printf|\n");
-    printf("|test printf : %i|\n", 42);
-    printf("|test printf : %0i|\n", 42);
-    printf("|test printf : %5i|\n", 42);
-    printf("|test printf : %05i|\n", 42);
-    printf("|test printf : %-5i|\n", 42);
-    
-    printf("|----------------------|\n");
-    
-    ft_printf("|test ft_printf|\n");
-    ft_printf("|test ft_printf : %i|\n", 42);
-    ft_printf("|test ft_printf : %0i|\n", 42);
-    ft_printf("|test ft_printf : %5i|\n", 42);
-    ft_printf("|test ft_printf : %05i|\n", 42);
-    ft_printf("|test ft_printf : %-5i|\n", 42);
-    
+    printf("|test printf ()         :|\n");
+    ft_printf("|test ft_printf ()      :|\n");
+    ft_printf("|-------------------------\\\n");
+    printf("|test printf (i)       :%i|\n", 42);
+    ft_printf("|test ft_printf (i)    :%i|\n", 42);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (0i)      :%0i|\n", 42);
+    ft_printf("|test ft_printf (0i)   :%0i|\n", 42);
+    ft_printf("|--------------------------\\\n");
+    printf("|test printf ( i)      :% i|\n", 42);
+    ft_printf("|test ft_printf ( i)   :% i|\n", 42);
+    ft_printf("|--------------------------|\n");
+    printf("|test printf (+i)      :%+i|\n", 42);
+    ft_printf("|test ft_printf (+i)   :%+i|\n", 42);
+    ft_printf("|---------------------------\\\n");
+    ft_printf("|----------------------------\\\n");
+    printf("|test printf (5i)      :%5i|\n", 42);
+    ft_printf("|test ft_printf (5i)   :%5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (05i)     :%05i|\n", 42);
+    ft_printf("|test ft_printf (05i)  :%05i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (-5i)     :%-5i|\n", 42);
+    ft_printf("|test ft_printf (-5i)  :%-5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf ( 5i)     :% 5i|\n", 42);
+    ft_printf("|test ft_printf ( 5i)  :% 5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (+5i)     :%+5i|\n", 42);
+    ft_printf("|test ft_printf (+5i)  :%+5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf ( 05i)    :% 05i|\n", 42);
+    ft_printf("|test ft_printf ( 05i) :% 05i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (+05i)    :%+05i|\n", 42);
+    ft_printf("|test ft_printf (+05i) :%+05i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf ( -5i)    :% -5i|\n", 42);
+    ft_printf("|test ft_printf ( -5i) :% -5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (+-5i)    :%+-5i|\n", 42);
+    ft_printf("|test ft_printf (+-5i) :%+-5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (0 5i)    :%0 5i|\n", 42);
+    ft_printf("|test ft_printf (0 5i) :%0 5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (0+5i)    :%0+5i|\n", 42);
+    ft_printf("|test ft_printf (0+5i) :%0+5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (- 5i)    :%- 5i|\n", 42);
+    ft_printf("|test ft_printf (- 5i) :%- 5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (-+5i)    :%-+5i|\n", 42);
+    ft_printf("|test ft_printf (-+5i) :%-+5i|\n", 42);
+    ft_printf("|----------------------------|\n");
 }
