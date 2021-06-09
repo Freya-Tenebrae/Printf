@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/08 11:25:59 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/09 17:32:04 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,8 @@ int main()
     ft_printf("|----------------------------|\n");
     printf("|test printf (-+5i)    :%-+5i|\n", 42);
     ft_printf("|test ft_printf (-+5i) :%-+5i|\n", 42);
+    ft_printf("|----------------------------|\n");
+    printf("|test printf (-+*i)    :%-+*i|\n", 10, 42);
+    ft_printf("|test ft_printf (-+*i) :%-+*i|\n", 10, 42);
     ft_printf("|----------------------------|\n");
 }
