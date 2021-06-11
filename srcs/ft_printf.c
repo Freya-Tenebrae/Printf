@@ -6,24 +6,20 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 00:34:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/09 17:25:50 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/11 13:07:56 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-/*
-TODO : ft_get_value
-*/
-
-static char	*ft_get_value(t_value_printf *value_printf)
+static int	ft_show_printf(char **result, char **str)
 {
-	char	*result;
+	int	len;
 
-	result = ft_strdup(value_printf->content);
-	free(value_printf->flags);
-	free(value_printf->content);
-	return (result);
+	ft_putstr_fd(*result, 1);
+	len = ft_strlen(*result);
+	ft_freeprintf(result, str);
+	return (len);
 }
 
 static int	ft_update_from_arg(char **result, char **str, va_list *arg, int *i)
@@ -103,8 +99,7 @@ static int	ft_get_results(char **str, va_list *arg)
 				return (-1);
 		}
 	}
-	ft_putstr_fd(result, 1);
-	return (ft_strlen(result));
+	return (ft_show_printf(&result, str));
 }
 
 int	ft_printf(const char *input, ...)
