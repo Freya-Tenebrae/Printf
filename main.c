@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/15 12:44:35 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:35:14 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/ft_printf.h"
@@ -14,9 +14,14 @@
 
 int main()
 {
-    int i;
+    int     i;
+    char    c;
+    char    *s;
 
-    i = 69420;
+    i = 0;
+    c = 'c';
+    s = "coucou";
+
     printf("|test printf ()        :|\n");
     ft_printf("|test ft_printf ()     :|\n");
     ft_printf("|------------------------\\\n");
@@ -217,20 +222,20 @@ int main()
     printf("|test printf ()        :|\n");
     ft_printf("|test ft_printf ()     :|\n");
     ft_printf("|------------------------\\\n");
-    printf("|test printf (c)       :%c|\n", 'c');
-    ft_printf("|test ft_printf (c)    :%c|\n", 'c');
+    printf("|test printf (c)       :%c|\n", c);
+    ft_printf("|test ft_printf (c)    :%c|\n", c);
     ft_printf("|---------------------------\\\n");
-    printf("|test printf (5c)      :%5c|\n", 'c');
-    ft_printf("|test ft_printf (5c)   :%5c|\n", 'c');
+    printf("|test printf (5c)      :%5c|\n", c);
+    ft_printf("|test ft_printf (5c)   :%5c|\n", c);
     ft_printf("|----------------------------|\n");
-    printf("|test printf (-5c)     :%-5c|\n", 'c');
-    ft_printf("|test ft_printf (-5c)  :%-5c|\n", 'c');
+    printf("|test printf (-5c)     :%-5c|\n", c);
+    ft_printf("|test ft_printf (-5c)  :%-5c|\n", c);
     ft_printf("|-----------------------------\\___\n");
-    printf("|test printf (-*c)     :%-*c|\n", 10, 'c');
-    ft_printf("|test ft_printf (-*c)  :%-*c|\n", 10, 'c');
+    printf("|test printf (-*c)     :%-*c|\n", 10, c);
+    ft_printf("|test ft_printf (-*c)  :%-*c|\n", 10, c);
     ft_printf("|---------------------------------|\n");
-    printf("|test printf (*c)      :%*c|\n", 10, 'c');
-    ft_printf("|test ft_printf (*c)   :%*c|\n", 10, 'c');
+    printf("|test printf (*c)      :%*c|\n", 10, c);
+    ft_printf("|test ft_printf (*c)   :%*c|\n", 10, c);
     ft_printf("|---------------------------------|\n");
     
     ft_printf("\n");
@@ -240,20 +245,20 @@ int main()
     printf("|test printf ()        :|\n");
     ft_printf("|test ft_printf ()     :|\n");
     ft_printf("|------------------------\\____\n");
-    printf("|test printf (s)       :%s|\n", "coucou");
-    ft_printf("|test ft_printf (s)    :%s|\n", "coucou");
+    printf("|test printf (s)       :%s|\n", s);
+    ft_printf("|test ft_printf (s)    :%s|\n", s);
     ft_printf("|-----------------------------\\____\n");
-    printf("|test printf (10s)      :%10s|\n", "coucou");
-    ft_printf("|test ft_printf (10s)   :%10s|\n", "coucou");
+    printf("|test printf (10s)      :%10s|\n", s);
+    ft_printf("|test ft_printf (10s)   :%10s|\n", s);
     ft_printf("|----------------------------------|\n");
-    printf("|test printf (-10s)     :%-10s|\n", "coucou");
-    ft_printf("|test ft_printf (-10s)  :%-10s|\n", "coucou");
+    printf("|test printf (-10s)     :%-10s|\n", s);
+    ft_printf("|test ft_printf (-10s)  :%-10s|\n", s);
     ft_printf("|----------------------------------\\________\n");
-    printf("|test printf (-*s)     :%-*s|\n", 20, "coucou");
-    ft_printf("|test ft_printf (-*s)  :%-*s|\n", 20, "coucou");
+    printf("|test printf (-*s)     :%-*s|\n", 20, s);
+    ft_printf("|test ft_printf (-*s)  :%-*s|\n", 20, s);
     ft_printf("|-------------------------------------------|\n");
-    printf("|test printf (*s)      :%*s|\n", 20, "coucou");
-    ft_printf("|test ft_printf (*s)   :%*s|\n", 20, "coucou");
+    printf("|test printf (*s)      :%*s|\n", 20, s);
+    ft_printf("|test ft_printf (*s)   :%*s|\n", 20, s);
     ft_printf("|-------------------------------------------|\n");
 
     ft_printf("\n");

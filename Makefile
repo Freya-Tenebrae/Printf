@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/15 14:43:56 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/15 15:39:15 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,13 @@ SRCS=$(addprefix ${FOLDER}/, \
 	ft_printf_o.c \
 	ft_printf_x.c \
 	ft_printf_conditioning_value.c)
-SRCS_BONUS=$(addprefix ${FOLDER}/, ft_printf_bonus.c ft_pars_printf_bonus.c)
+SRCS_BONUS=$(addprefix ${FOLDER_BONUS}/, ft_printf_bonus.c)
 OBJS=$(SRCS:.c=.o)
 OBJS_BONUS=$(SRCS_BONUS:.c=.o)
 
 HEADER=includes
 FOLDER=srcs
+FOLDER_BONUS=srcs_bonus
 LIBFT=libft
 
 CC=gcc

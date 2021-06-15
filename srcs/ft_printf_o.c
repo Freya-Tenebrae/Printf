@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 12:08:30 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/15 14:40:27 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/15 14:49:28 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_printf_o(t_value_printf *value_printf, unsigned long long i)
 {
 	(void)value_printf;
-	
 	ft_putstr_fd(ft_itoa_octale(i), 1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:16:49 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/14 14:17:36 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/15 14:49:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_printf_c(t_value_printf *value_printf, char c)
 {
 	(void)value_printf;
-
 	ft_putchar_fd(c, 1);
 	return (0);
 }
