@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/15 12:25:39 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/15 14:43:56 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,13 @@ NAME=libftprintf.a
 SRCS=$(addprefix ${FOLDER}/, \
 	ft_printf.c \
 	ft_printf_util.c \
+	ft_printf_util_itoa.c \
 	ft_printf_pars.c \
 	ft_printf_get_content.c \
 	ft_printf_c.c \
 	ft_printf_s.c \
 	ft_printf_i.c \
+	ft_printf_u.c \
 	ft_printf_o.c \
 	ft_printf_x.c \
 	ft_printf_conditioning_value.c)

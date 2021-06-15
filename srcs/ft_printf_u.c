@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_x.c                                      :+:      :+:    :+:   */
+/*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 12:08:32 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/15 14:44:55 by cmaginot         ###   ########.fr       */
+/*   Created: 2021/06/15 13:08:52 by cmaginot          #+#    #+#             */
+/*   Updated: 2021/06/15 14:44:45 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf_x(t_value_printf *value_printf, unsigned long long i, int maj)
+int	ft_printf_u(t_value_printf *value_printf, unsigned long long i)
 {
-	char	*str;
-	int		j;
-
 	(void)value_printf;
 
-	str = ft_itoa_hexadecimal(i);
-	j = 0;
-	if (maj == 1)
-	{
-		while (str[j] != '\0')
-			ft_toupper(str[j]);
-	}
-	ft_putstr_fd(str, 1);
+	ft_putstr_fd(ft_itoa_unsigned(i), 1);
 	return (0);
 }
