@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:07:14 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/11 15:07:50 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/14 14:17:41 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ TODO :
         -do lenght
         -do ft_get_value properly
         -do other specifier, make fonction for them and not atoi or other ...
+        exeption : ajouter +1 au score final lorsque l'on utilise un char '/0' 
+        pour c
 */
 
-char	*ft_get_value(t_value_printf *value_printf)
+/* char	*ft_get_value(t_value_printf *value_printf, char *content)
 {
 	char	*result;
 	char	*tmp1;
@@ -28,7 +30,7 @@ char	*ft_get_value(t_value_printf *value_printf)
 	int		char_to_add;
 	int		i;
 
-	result = ft_strdup(value_printf->content);
+	result = ft_strdup(content);
 	if (value_printf->precision != 0 && \
 		ft_strchr("diefgo", value_printf->specifier) != NULL)
 	{
@@ -79,6 +81,8 @@ char	*ft_get_value(t_value_printf *value_printf)
 	if (value_printf->width != 0)
 	{
 		char_to_add = value_printf->width - ft_strlen(result);
+		if (result[0] == '\0' && value_printf->specifier == 'c')
+			char_to_add--;
 		if (char_to_add > 0)
 		{
 			tmp1 = malloc(sizeof(char) * (char_to_add + 1));
@@ -122,8 +126,5 @@ char	*ft_get_value(t_value_printf *value_printf)
 	value_printf->width = 0;
 	value_printf->precision = 0;
 	value_printf->specifier = '\0';
-	free(value_printf->flags);
-	free(value_printf->length);
-	free(value_printf->content);
 	return (result);
-}
+} */

@@ -6,18 +6,11 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 13:34:50 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/11 11:48:58 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/14 13:22:01 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-int	ft_freeprintf(char **result, char **str)
-{
-	free(*result);
-	free(*str);
-	return (-1);
-}
 
 int	ft_init_value_lst(t_value_printf *value_printf)
 {
@@ -28,7 +21,6 @@ int	ft_init_value_lst(t_value_printf *value_printf)
 	value_printf->precision = 0;
 	value_printf->length = NULL;
 	value_printf->specifier = '\0';
-	value_printf->content = NULL;
 	return (0);
 }
 

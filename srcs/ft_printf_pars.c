@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:17:59 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/11 15:27:25 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/14 13:40:27 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,33 +107,24 @@ static int	ft_get_length(char *str, int i, t_value_printf *value_printf)
 	return (j);
 }
 
-int	ft_parsing(char *str, int i, t_value_printf *value_printf, va_list *arg)
+int	ft_parsing(char *str, int *i, t_value_printf *value_printf, va_list *arg)
 {
-	int	j;
-	int	tmpj;
+	int	tmpi;
 
-	j = 0;
-	tmpj = ft_get_flags(str, i, value_printf);
-	if (tmpj < 0)
+	tmpi = ft_get_flags(str, *i, value_printf);
+	if (tmpi < 0)
 		return (-1);
-	j = j + tmpj;
-	tmpj = ft_get_width(str, i + j, value_printf, arg);
-	if (tmpj < 0)
+	*i += tmpi;
+	tmpi = ft_get_width(str, *i, value_printf, arg);
+	if (tmpi < 0)
 		return (-1);
-	j = j + tmpj;
-	j += ft_get_precision(str, i + j, value_printf, arg);
-	tmpj = ft_get_length(str, i + j, value_printf);
-	if (tmpj < 0)
+	*i += tmpi;
+	*i += ft_get_precision(str, *i, value_printf, arg);
+	tmpi = ft_get_length(str, *i, value_printf);
+	if (tmpi < 0)
 		return (-1);
-	j = j + tmpj;
-	value_printf->specifier = str[i + j];
-	j++;
-	value_printf->content = ft_get_content(value_printf, arg);
-	if (value_printf->content == NULL)
-	{
-		free(value_printf->flags);
-		free(value_printf->length);
-		return (-1);
-	}
-	return (j);
+	*i += tmpi;
+	value_printf->specifier = str[*i];
+	*i += 1;
+	return (ft_get_content(value_printf, arg));
 }

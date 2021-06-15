@@ -6,13 +6,22 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/11 13:08:06 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/15 12:25:39 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
-SRCS=$(addprefix ${FOLDER}/, ft_printf.c ft_printf_pars.c ft_printf_util.c \
-	ft_printf_get_content.c ft_printf_conditioning_value.c)
+SRCS=$(addprefix ${FOLDER}/, \
+	ft_printf.c \
+	ft_printf_util.c \
+	ft_printf_pars.c \
+	ft_printf_get_content.c \
+	ft_printf_c.c \
+	ft_printf_s.c \
+	ft_printf_i.c \
+	ft_printf_o.c \
+	ft_printf_x.c \
+	ft_printf_conditioning_value.c)
 SRCS_BONUS=$(addprefix ${FOLDER}/, ft_printf_bonus.c ft_pars_printf_bonus.c)
 OBJS=$(SRCS:.c=.o)
 OBJS_BONUS=$(SRCS_BONUS:.c=.o)
