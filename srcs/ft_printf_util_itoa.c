@@ -6,13 +6,15 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:18 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/15 14:48:09 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/16 12:28:51 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_getlen(unsigned long long n, int i)
+/* ajouter itoa long long + itoa decimal + ...;*/
+
+static int	ft_getunsignedlen(unsigned long long n, int i)
 {
 	int		len;
 
@@ -31,7 +33,7 @@ char	*ft_itoa_hexadecimal(unsigned long long n)
 	char				*str;
 	unsigned long long	nb;
 
-	len = ft_getlen(n, 16);
+	len = ft_getunsignedlen(n, 16);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);
@@ -53,7 +55,7 @@ char	*ft_itoa_unsigned(unsigned long long n)
 	int			len;
 	char		*str;
 
-	len = ft_getlen(n, 10);
+	len = ft_getunsignedlen(n, 10);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);
@@ -71,7 +73,7 @@ char	*ft_itoa_octale(unsigned long long n)
 	int			len;
 	char		*str;
 
-	len = ft_getlen(n, 8);
+	len = ft_getunsignedlen(n, 8);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);

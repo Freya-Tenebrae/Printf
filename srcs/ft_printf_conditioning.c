@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_conditioning_value.c                     :+:      :+:    :+:   */
+/*   ft_printf_conditioning.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:07:14 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/14 14:17:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/16 12:13:11 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /*
 TODO :
-        -do precision before width
         -do lenght
         -do ft_get_value properly
         -do other specifier, make fonction for them and not atoi or other ...
