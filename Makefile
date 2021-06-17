@@ -6,23 +6,28 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/16 12:29:01 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/17 16:31:20 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
 SRCS=$(addprefix ${FOLDER}/, \
 	ft_printf.c \
-	ft_printf_util.c \
-	ft_printf_util_itoa.c \
+	ft_printf_tools_1.c \
+	ft_printf_tools_2.c \
 	ft_printf_pars.c \
 	ft_printf_get_content.c \
-	ft_printf_c.c \
 	ft_printf_s.c \
-	ft_printf_i.c \
-	ft_printf_u.c \
-	ft_printf_o.c \
-	ft_printf_x.c \
+	ft_printf_c.c \
+	ft_printf_p.c \
+	ft_printf_i_1.c \
+	ft_printf_i_2.c \
+	ft_printf_u_1.c \
+	ft_printf_u_2.c \
+	ft_printf_o_1.c \
+	ft_printf_o_2.c \
+	ft_printf_x_1.c \
+	ft_printf_x_2.c \
 	ft_printf_conditioning.c)
 SRCS_BONUS=$(addprefix ${FOLDER_BONUS}/, ft_printf_bonus.c)
 OBJS=$(SRCS:.c=.o)
@@ -47,10 +52,10 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $< -I $(HEADER)
 
-bonus: $(OBJS_BONUS)
+bonus: $(OBJS)
 	make -C $(LIBFT) bonus
 	cp libft/libft.a ./$(NAME)
-	ar -rcs $(NAME) $(OBJS_BONUS)
+	ar -rcs $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)

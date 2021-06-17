@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:17:59 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/14 13:40:27 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/17 15:29:16 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static int	ft_get_precision(char *str, int i, t_value_printf *value_printf, \
 	j = 0;
 	if (str[i + j] == '.')
 	{
+		value_printf->is_precision = 1;
 		j++;
 		if (ft_isdigit(str[i + j]) == 1)
 		{

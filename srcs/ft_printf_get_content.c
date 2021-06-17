@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 11:02:22 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/16 11:59:24 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/17 14:39:54 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_get_content2(t_value_printf *value_printf, va_list *arg)
 	if (value_printf->specifier == 'n')
 		return (-1);
 	if (value_printf->specifier == 'o')
-		return (ft_printf_o(value_printf, va_arg(*arg, unsigned long long)));
+		return (ft_printf_o(value_printf, arg));
 	if (value_printf->specifier == 'f')
 		return (-1);
 	if (value_printf->specifier == 'e')
@@ -34,22 +34,20 @@ static int	ft_get_content2(t_value_printf *value_printf, va_list *arg)
 int	ft_get_content(t_value_printf *value_printf, va_list *arg)
 {
 	if (value_printf->specifier == 'c')
-		return (ft_printf_c(value_printf, (char)va_arg(*arg, int)));
+		return (ft_printf_c(value_printf, arg));
 	if (value_printf->specifier == '%')
-		return (ft_printf_c(value_printf, '%'));
+		return (ft_printf_c(value_printf, NULL));
 	if (value_printf->specifier == 's')
-		return (ft_printf_s(value_printf, va_arg(*arg, char *)));
-	if (value_printf->specifier == 'i')
-		return (ft_printf_i(value_printf, arg));
-	if (value_printf->specifier == 'd')
+		return (ft_printf_s(value_printf, arg));
+	if (value_printf->specifier == 'i' || value_printf->specifier == 'd')
 		return (ft_printf_i(value_printf, arg));
 	if (value_printf->specifier == 'u')
-		return (ft_printf_u(value_printf, va_arg(*arg, unsigned long long)));
+		return (ft_printf_u(value_printf, arg));
 	if (value_printf->specifier == 'x')
-		return (ft_printf_x(value_printf, va_arg(*arg, unsigned long long), 0));
+		return (ft_printf_x(value_printf, arg, 0));
 	if (value_printf->specifier == 'X')
-		return (ft_printf_x(value_printf, va_arg(*arg, unsigned long long), 1));
+		return (ft_printf_x(value_printf, arg, 1));
 	if (value_printf->specifier == 'p')
-		return (-1);
+		return (ft_printf_p(value_printf, arg));
 	return (ft_get_content2(value_printf, arg));
 }

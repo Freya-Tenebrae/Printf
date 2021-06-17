@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/15 15:35:14 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:31:13 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/ft_printf.h"
@@ -18,7 +18,7 @@ int main()
     char    c;
     char    *s;
 
-    i = 0;
+    i = 42;
     c = 'c';
     s = "coucou";
 
@@ -378,6 +378,289 @@ int main()
     ft_printf("\n");
     ft_printf("\n");
     ft_printf("\n");
+    
+    signed char sci = 125;
+    unsigned char uci = 242;
+    short ssi = 4269;
+    unsigned short usi = 4269;
+    long sli = 1147483647;
+    unsigned long uli = 2494967295;
+    long long slli = 5223372036854775807;
+    unsigned long long ulli = 5223372036854775807;
+    
+    printf("|test printf (i)       :%i|\n", i);
+    ft_printf("|test ft_printf (i)    :%i|\n", i);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (li)       :%li|\n", sli);
+    ft_printf("|test ft_printf (li)    :%li|\n", sli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (lli)       :%lli|\n", slli);
+    ft_printf("|test ft_printf (lli)    :%lli|\n", slli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hi)       :%hi|\n", ssi);
+    ft_printf("|test ft_printf (hi)    :%hi|\n", ssi);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hhi)       :%hhi|\n", sci);
+    ft_printf("|test ft_printf (hhi)    :%hhi|\n", sci);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (o)       :%o|\n", i);
+    ft_printf("|test ft_printf (o)    :%o|\n", i);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (lo)       :%lo|\n", uli);
+    ft_printf("|test ft_printf (lo)    :%lo|\n", uli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (llo)       :%llo|\n", ulli);
+    ft_printf("|test ft_printf (llo)    :%llo|\n", ulli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (ho)       :%ho|\n", usi);
+    ft_printf("|test ft_printf (ho)    :%ho|\n", usi);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hho)       :%hho|\n", uci);
+    ft_printf("|test ft_printf (hho)    :%hho|\n", uci);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (x)       :%x|\n", i);
+    ft_printf("|test ft_printf (x)    :%x|\n", i);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (lx)       :%lx|\n", uli);
+    ft_printf("|test ft_printf (lx)    :%lx|\n", uli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (llx)       :%llx|\n", ulli);
+    ft_printf("|test ft_printf (llx)    :%llx|\n", ulli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hx)       :%hx|\n", usi);
+    ft_printf("|test ft_printf (hx)    :%hx|\n", usi);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hhx)       :%hhx|\n", uci);
+    ft_printf("|test ft_printf (hhx)    :%hhx|\n", uci);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (u)       :%u|\n", i);
+    ft_printf("|test ft_printf (u)    :%u|\n", i);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (lu)       :%lu|\n", uli);
+    ft_printf("|test ft_printf (lu)    :%lu|\n", uli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (llu)       :%llu|\n", ulli);
+    ft_printf("|test ft_printf (llu)    :%llu|\n", ulli);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hu)       :%hu|\n", usi);
+    ft_printf("|test ft_printf (hu)    :%hu|\n", usi);
+    ft_printf("|-------------------------|\n");
+    printf("|test printf (hhu)       :%hhu|\n", uci);
+    ft_printf("|test ft_printf (hhu)    :%hhu|\n", uci);
+    ft_printf("|-------------------------|\n");
+    
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+    
+    wint_t wtc = 142;
+    
+    printf("|test printf (c)       :%c|\n", c);
+    ft_printf("|test ft_printf (c)    :%c|\n", c);
+    ft_printf("-------------------------\n");
+    printf("|test printf (lc)       :%lc|\n", wtc);
+    ft_printf("|test ft_printf (lc)    :%lc|\n", wtc);
+    ft_printf("-------------------------\n");
+    
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+    
+    printf("|test printf (d)     :%d|\n", 0);
+    ft_printf("|test ft_printf  (d) :%d|\n", 0);
+    ft_printf("-------------------------\n");
+    printf("|test printf (d)     :%d|\n", i);
+    ft_printf("|test ft_printf  (d) :%d|\n", i);
+    ft_printf("-------------------------\n");
+    printf("|test printf (.d)    :%.d|\n", 0);
+    ft_printf("|test ft_printf (.d) :%.d|\n", 0);
+    ft_printf("-------------------------\n");
+    printf("|test printf (.d)    :%.d|\n", i);
+    ft_printf("|test ft_printf (.d) :%.d|\n", i);
+    ft_printf("-------------------------\n");
+    printf("|test printf (.2d)   :%.2d|\n", 0);
+    ft_printf("|test ft_printf (.2d):%.2d|\n", 0);
+    ft_printf("-------------------------\n");
+    printf("|test printf (.2d)   :%.2d|\n", i);
+    ft_printf("|test ft_printf (.2d):%.2d|\n", i);
+    ft_printf("-------------------------\n");
+    printf("|%0*.d|\n", -2, 0);
+    ft_printf("|%0*.d|\n", -2, 0);
+    ft_printf("-------------------------\n");
+    
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+    
+    #define UINT_MAX   4294967295U
+    ft_printf("-------------------------\n");
+    printf("|%011.1d|\n", UINT_MAX + 1);
+    ft_printf("|%011.1d|\n", UINT_MAX + 1);
+    ft_printf("-------------------------\n");
+    printf("|%09.0d|\n", UINT_MAX);
+    ft_printf("|%09.0d|\n", UINT_MAX);
+    ft_printf("-------------------------\n");
+    printf("|%010.0d|\n", UINT_MAX);
+    ft_printf("|%010.0d|\n", UINT_MAX);
+    ft_printf("-------------------------\n");
+    printf("|%011.0d|\n", UINT_MAX);
+    ft_printf("|%011.0d|\n", UINT_MAX);
+    ft_printf("-------------------------\n");
+    printf("|%09.0d|\n", UINT_MAX + 1);
+    ft_printf("|%09.0d|\n", UINT_MAX + 1);
+    ft_printf("-------------------------\n");
+    printf("|%010.0d|\n", UINT_MAX + 1);
+    ft_printf("|%010.0d|\n", UINT_MAX + 1);
+    ft_printf("-------------------------\n");
+    printf("|%011.0d|\n", UINT_MAX + 1);
+    ft_printf("|%011.0d|\n", UINT_MAX + 1);
+    ft_printf("-------------------------\n");
+
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    ft_printf("-------------------------\n");
+    printf("|%-3.2u %10.42u|\n", 1, -1);
+    ft_printf("|%-3.2u %10.42u|\n", 1, -1);
+    ft_printf("-------------------------\n");
+    printf("|%10.42u|\n", -1);
+    ft_printf("|%10.42u|\n", -1);
+    ft_printf("-------------------------\n");
+    printf("|%-3.2u|\n", -1);
+    ft_printf("|%-3.2u|\n", -1);
+    ft_printf("-------------------------\n");
+
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    ft_printf("-------------------------\n");
+    printf("|%*.s %.1s|\n", 10, "123", "4567");
+    ft_printf("|%*.s %.1s|\n", 10, "123", "4567");
+    ft_printf("-------------------------\n");
+    printf("|%*.s|\n", 10, "123");
+    ft_printf("|%*.s|\n", 10, "123");
+    ft_printf("-------------------------\n");
+    printf("|%.1s|\n", "4567");
+    ft_printf("|%.1s|\n", "4567");
+    ft_printf("-------------------------\n");
+    printf("|%.10s|\n", "4567");
+    ft_printf("|%.10s|\n", "4567");
+    ft_printf("-------------------------\n");
+    printf("|%*.*s|\n", 10, -2, "coucou");
+    ft_printf("|%*.*s|\n", 10, -2, "coucou");
+    ft_printf("-------------------------\n");
+    printf("|%*.*s|\n", 10, 2, "coucou");
+    ft_printf("|%*.*s|\n", 10, 2, "coucou");
+    ft_printf("-------------------------\n");
+    // printf("|%-3.s|\n", NULL);
+    // ft_printf("|%-3.s|\n", NULL);
+    // ft_printf("-------------------------\n");
+    // printf("|%-3.1s|\n", NULL);
+    // ft_printf("|%-3.1s|\n", NULL);
+    // ft_printf("-------------------------\n");
+    // printf("|%.*s|\n", -2, NULL);
+    // ft_printf("|%.*s|\n", -2, NULL);
+    // ft_printf("-------------------------\n");
+
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    ft_printf("-------------------------\n");
+    printf("|%p|\n", NULL);
+    ft_printf("|%p|\n", NULL);
+    ft_printf("-------------------------\n");
+    printf("|%p|\n", &i);
+    ft_printf("|%p|\n", &i);
+    ft_printf("-------------------------\n");
+    printf("|%p|\n", &c);
+    ft_printf("|%p|\n", &c);
+    ft_printf("-------------------------\n");
+    printf("|%p|\n", s);
+    ft_printf("|%p|\n", s);
+    ft_printf("-------------------------\n");
+    printf("|%p|\n", &s);
+    ft_printf("|%p|\n", &s);
+    ft_printf("-------------------------\n");
+
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'ƀ');
+    ft_printf("|%lc|\n", u'ƀ');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'ɏ');
+    ft_printf("|%lc|\n", u'ɏ');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'ɐ');
+    ft_printf("|%lc|\n", u'ɐ');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'ʯ');
+    ft_printf("|%lc|\n", u'ʯ');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'ʰ');
+    ft_printf("|%lc|\n", u'ʰ');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'˿');
+    ft_printf("|%lc|\n", u'˿');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'ୟ');
+    ft_printf("|%lc|\n", u'ୟ');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'௫');
+    ft_printf("|%lc|\n", u'௫');
+    ft_printf("-------------------------\n");
+    printf("|%lc|\n", u'࿚');
+    ft_printf("|%lc|\n", u'࿚');
+    ft_printf("-------------------------\n");
+
+
+    // printf("|%p|\n", -1);
+    // ft_printf("|%p|\n", -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%p|\n", 1);
+    // ft_printf("|%p|\n", 1);
+    // ft_printf("-------------------------\n");
+    // printf("|%p|\n", 15);
+    // ft_printf("|%p|\n", 15);
+    // ft_printf("-------------------------\n");
+    // printf("|%p|\n", 16);
+    // ft_printf("|%p|\n", 16);
+    // ft_printf("-------------------------\n");
+    // printf("|%p|\n", 17);
+    // ft_printf("|%p|\n", 17);
+    // ft_printf("-------------------------\n");
+    // printf("|%10p %10p|\n", 1, -1);
+    // ft_printf("|%10p %10p|\n", 1, -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%-10p %10p|\n", 1, -1);
+    // ft_printf("|%-10p %10p|\n", 1, -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%10p %-10p|\n", 1, -1);
+    // ft_printf("|%10p %-10p|\n", 1, -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%-10p %-10p|\n", 1, -1);
+    // ft_printf("|%-10p %-10p|\n", 1, -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%10p %-10p|\n", 1, -1);
+    // ft_printf("|%10p %-10p|\n", 1, -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%p %p|\n", 1, -1);
+    // ft_printf("|%p %p|\n", 1, -1);
+    // ft_printf("-------------------------\n");
+    // printf("|%10p %-10p|\n", 0, 0);
+    // ft_printf("|%10p %-10p|\n", 0, 0);
+    // ft_printf("-------------------------\n");
+    // printf("|%*p %-*p|\n", -10, 101, -10, 42);
+    // ft_printf("|%*p %-*p|\n", -10, 101, -10, 42);
+    // ft_printf("-------------------------\n");
+    // printf("|.-0*%*p %-*p*0-.|\n", 11, 101, 11, 42);
+    // ft_printf("|.-0*%*p %-*p*0-.|\n", 11, 101, 11, 42);
+    // ft_printf("-------------------------\n");
     
     // printf("|test printf ()           :%-c%-c%c*|\n", 1, '0', 0); //c 21
     // ft_printf("|test ft_printf ()        :%-c%-c%c*|\n", 1, '0', 0);
