@@ -47,4 +47,4 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] Leaks
 - [ ] Securisation of memory allocation
 - [ ] Create 2 version for normal and bonuses
-- [ ] Tested on 4 or mor testers
+- [ ] Tested on 4 or more testers
