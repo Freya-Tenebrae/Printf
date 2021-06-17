@@ -10,7 +10,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 ## Avancement / Advancement
 
-Specifier :
+### Specifier :
 
 - [x] c
 - [x] s
@@ -26,9 +26,9 @@ Specifier :
 - [ ] g
 - [ ] e
 
-Flag :
+### Flag :
 
-- [x] Number (Width)
+- [x] Numbers (Width)
 - [x] -
 - [x] 0
 - [x] .
@@ -40,3 +40,11 @@ Flag :
 - [x] ll (exept for undone specifier)
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
+
+### Other
+
+- [x] Norm
+- [x] Leaks
+- [ ] Securisation of memory allocation
+- [ ] Create 2 version for normal and bonuses
+- [ ] Tested on 4 or mor testers
