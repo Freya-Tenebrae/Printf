@@ -18,6 +18,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] d
 - [x] i
 - [x] u
+- [x] o
 - [x] x
 - [x] X
 - [x] %
