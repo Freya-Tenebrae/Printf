@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/17 16:13:22 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/18 11:05:41 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int			ft_printf_x_conditionning(t_value_printf *value_printf, int l, \
 int			ft_printf_p(t_value_printf *value_printf, va_list *arg);
 /* *********************************** n ************************************ */
 /* *********************************** f ************************************ */
+int			ft_printf_f(t_value_printf *value_printf, va_list *arg);
 /* *********************************** e ************************************ */
 /* *********************************** g ************************************ */
 /* ************************************************************************** */
@@ -90,6 +91,7 @@ void		ft_putwstr(wchar_t *s);
 /* ************************************************************************** */
 int			ft_getlen_ull(unsigned long long n, int i);
 int			ft_getlen_ll(long long n, int i);
+char		*ft_nftoa(double f, int precision);
 int			ft_init_value_lst(t_value_printf *value_printf);
 char		*ft_straddcharendstr(const char *s, char const c);
 char		*ft_straddcharstartstr(const char *s, char const c);

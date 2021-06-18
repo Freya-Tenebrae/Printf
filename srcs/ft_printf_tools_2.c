@@ -6,40 +6,27 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:18 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/17 16:15:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/18 10:01:54 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_getlen_ll(long long n, int i)
-{
-	int	len;
+/* need to do ft_putwchar & ft_putwstr properly */
 
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		n /= i;
-		len++;
-	}
-	return (len);
+void	ft_putwchar(wint_t c)
+{
+	write(1, &c, 1);
 }
 
-int	ft_getlen_ull(unsigned long long n, int i)
+void	ft_putwstr(wchar_t *s)
 {
-	int	len;
+	size_t	i;
 
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		n /= i;
-		len++;
-	}
-	return (len);
+	i = -1;
+	if (s != 0)
+		while (s[++i] != '\0')
+			ft_putwchar(s[i]);
 }
 
 void	ft_putnbr_oct(unsigned long long n)

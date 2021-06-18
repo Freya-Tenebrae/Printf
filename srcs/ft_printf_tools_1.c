@@ -6,28 +6,11 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 13:34:50 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/17 16:15:43 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/18 10:01:48 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-/* need to do ft_putwchar & ft_putwstr properly */
-
-void	ft_putwchar(wint_t c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putwstr(wchar_t *s)
-{
-	size_t	i;
-
-	i = -1;
-	if (s != 0)
-		while (s[++i] != '\0')
-			ft_putwchar(s[i]);
-}
 
 int	ft_init_value_lst(t_value_printf *value_printf)
 {

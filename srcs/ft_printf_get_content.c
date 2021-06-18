@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 11:02:22 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/17 14:39:54 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/18 09:58:24 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_get_content2(t_value_printf *value_printf, va_list *arg)
 	if (value_printf->specifier == 'o')
 		return (ft_printf_o(value_printf, arg));
 	if (value_printf->specifier == 'f')
-		return (-1);
+		return (ft_printf_f(value_printf, arg));
 	if (value_printf->specifier == 'e')
 		return (-1);
 	if (value_printf->specifier == 'E')
