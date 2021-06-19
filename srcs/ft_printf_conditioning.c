@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:07:14 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/17 16:13:00 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/19 15:47:02 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ int	ft_printf_conditionning_width(t_value_printf *value_printf, int l, \
 		else
 		{
 			if (ft_strchr(value_printf->flags, '0') != NULL && \
-				value_printf->is_precision == 0)
+				(value_printf->is_precision == 0 || \
+				value_printf->precision < 0))
 				tmp = ft_straddcharendstr(*pre_value, '0');
 			else
 				tmp = ft_straddcharstartstr(*pre_value, ' ');

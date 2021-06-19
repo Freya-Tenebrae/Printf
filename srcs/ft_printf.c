@@ -38,7 +38,7 @@ static int	ft_get_results(char **str, va_list *arg, int *size)
 		j = 0;
 		while ((*str)[i + j] != '\0' && (*str)[i + j] != '%')
 		{
-			ft_putchar_fd((*str)[i + j], 1);
+			ft_putchar((*str)[i + j]);
 			j++;
 		}
 		i = i + j;

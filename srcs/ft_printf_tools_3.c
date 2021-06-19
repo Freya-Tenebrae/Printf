@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:00:44 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/18 12:48:01 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/19 15:09:12 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,18 @@ int	ft_getlen_ull(unsigned long long n, int i)
 
 char	*ft_nftoa(double f, int precision)
 {
-	long long	nb;
-	int			len;
-	int			i;
-	char		*str;
-	long long	nb_decimal;
+	unsigned long long	nb;
+	int					len;
+	double				tmpnb;
+	int					i;
+	char				*str;
+	unsigned long long	nb_decimal;
 
+	if (f != f)
+		return (ft_strdup ("nan"));
+	if (f != 0 && (f < -DBL_MAX || (f > -DBL_MIN && f < DBL_MIN) \
+		|| f > DBL_MAX))
+		return (ft_strdup ("inf"));
 	if (f < 0)
 		f *= -1;
 	nb = (long long)f;
@@ -60,8 +66,10 @@ char	*ft_nftoa(double f, int precision)
 		if (!str)
 			return (0);
 		str[len] = '\0';
-		i = (long long)(f * 10) - (nb * 10);
-		if (i >= 5)
+		tmpnb = (f * 10) - (nb * 10);
+		if (tmpnb > 5)
+			nb++;
+		else if (tmpnb == 5 && nb % 2 != 0)
 			nb++;
 		while (0 < len)
 		{
@@ -80,8 +88,10 @@ char	*ft_nftoa(double f, int precision)
 		while (i++ < precision)
 			f *= 10;
 		nb_decimal = (long long)f;
-		i = (long long)(f * 10) - (nb_decimal * 10);
-		if(i >= 5)
+		tmpnb = (f * 10) - (nb_decimal * 10);
+		if (tmpnb > 5)
+			nb_decimal++;
+		else if (tmpnb == 5 && nb_decimal % 2 != 0)
 			nb_decimal++;
 		while (0 < precision)
 		{

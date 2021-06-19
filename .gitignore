@@ -1,8 +1,11 @@
+.DS_Store
 a.out
 *.o
 libftprintf.a
-libft.a
 libft/libft.a
-.DS_Store
-printfTester/*printfTester
+printfTester
 printfTester/*
+42TESTERS-PRINTF
+42TESTERS-PRINTF/*
+a.out.dSYM
+a.out.dSYM/*

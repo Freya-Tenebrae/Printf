@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 09:49:38 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/18 12:06:51 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/19 15:07:48 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ static int	ft_printf_conditionning_width_f(t_value_printf *value_printf, \
 		}
 		else
 		{
-			if (ft_strchr(value_printf->flags, '0') != NULL)
+			if (ft_strchr(value_printf->flags, '0') != NULL && \
+				ft_strcmp(*post_value, "inf") != 0 && \
+				ft_strcmp(*post_value, "nan") != 0)
 				tmp = ft_straddcharendstr(*pre_value, '0');
 			else
 				tmp = ft_straddcharstartstr(*pre_value, ' ');
@@ -50,7 +52,6 @@ static int	ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
 	free(*post_value);
 	*post_value = tmp;
 	return (ft_strlen(*post_value));
-
 }
 
 static int	ft_printf_f_conditionning(t_value_printf *value_printf, int l, \
@@ -62,8 +63,10 @@ static int	ft_printf_f_conditionning(t_value_printf *value_printf, int l, \
 	pre_value = ft_strdup("");
 	post_value = ft_strdup("");
 	l = ft_printf_conditionning_precision_f(value_printf, f, &post_value);
-	l += ft_printf_conditionning_sign(value_printf, (long long *)&f, &pre_value);
-	l = ft_printf_conditionning_width_f(value_printf, l, &pre_value, &post_value);
+	l += ft_printf_conditionning_sign(value_printf, (long long *)&f, \
+		&pre_value);
+	l = ft_printf_conditionning_width_f(value_printf, l, &pre_value, \
+		&post_value);
 	ft_putstr(pre_value);
 	ft_putstr(post_value);
 	free(pre_value);
