@@ -46,6 +46,6 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 - [ ] Norm `ft_print_tool_3 need to be done --> ft_ftoa() need to be spleet (too long and have too many variable)`
 - [x] Leaks
-- [ ] Securisation of memory allocation `need to be done on _specifier.c`
+- [ ] Securisation of memory allocation `need to be done on _ioux.c`
 - [ ] Create 2 version for normal and bonuses
 - [ ] Tested on many tester and computer (personal and at 42)
