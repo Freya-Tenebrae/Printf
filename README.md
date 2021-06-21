@@ -22,7 +22,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] x
 - [x] X
 - [x] %
-- [ ] n `(need to do major modification to be possible : secure malloc and do 2 version (with and without bonus) before doing this)`
+- [ ] n `(need to do major modification to be possible : to do in last)`
 - [x] f `(precision to test on 42'mac --> round)`
 - [ ] g 
 - [x] e `(precision to test on 42'mac --> round)`
