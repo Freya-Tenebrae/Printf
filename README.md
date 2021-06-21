@@ -48,4 +48,6 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] Leaks
 - [ ] Securisation of memory allocation `need to be done on _ioux.c`
 - [ ] Create 2 version for normal and bonuses
+- [ ] harmonizing the code
+- [ ] avoid repetitions
 - [ ] Tested on many tester and computer (personal and at 42)
