@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:00:44 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 14:55:09 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:00:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,17 @@ char	*ft_itoa_power(int power_ten)
 	if (power_ten == 0)
 		return (ft_strdup("+00"));
 	str = malloc(sizeof(char) * 4);
+	if (!str)
+		return (NULL);
 	if (power_ten < 0)
 	{
-		str[0] = '-';
 		power_ten *= -1;
+		str[0] = '-';
 	}
 	else
 		str[0] = '+';
-	if (power_ten < 10 && power_ten > -10)
-	{
-		str[1] = '0';
-		str[2] = '0' + power_ten;
-	}
-	else
-	{
-		str[1] = power_ten / 10;
-		str[2] = power_ten % 10;
-	}
+	str[1] = '0' + power_ten / 10;
+	str[2] = '0' + power_ten % 10;
 	str[3] = '\0';
 	return (str);
 }
@@ -92,7 +86,7 @@ char	*ft_nftoa(double f, int precision)
 	{
 		str = malloc(sizeof(char) * (len + 1));
 		if (!str)
-			return (0);
+			return (NULL);
 		str[len] = '\0';
 		tmpnb = (f * 10) - (nb * 10);
 		if (tmpnb > 5)
@@ -109,7 +103,7 @@ char	*ft_nftoa(double f, int precision)
 	{
 		str = malloc(sizeof(char) * (len + precision + 2));
 		if (!str)
-			return (0);
+			return (NULL);
 		str[len + precision + 1] = '\0';
 		f = f - nb;
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:16:49 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/17 16:39:01 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/21 19:31:24 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,21 @@ static int	ft_printf_c_conditionning(t_value_printf *value_printf, int l, \
 	char	*post_value;
 
 	pre_value = ft_strdup("");
+	if (!pre_value)
+		return (-1);
 	post_value = ft_strdup("");
+	if (!post_value)
+	{
+		free(pre_value);
+		return (-1);
+	}
 	l = ft_printf_conditionning_width(value_printf, l, &pre_value, &post_value);
-	ft_putstr(pre_value);
-	ft_putchar(c);
-	ft_putstr(post_value);
+	if (l >= 0)
+	{
+		ft_putstr(pre_value);
+		ft_putchar(c);
+		ft_putstr(post_value);
+	}
 	free(pre_value);
 	free(post_value);
 	return (l);

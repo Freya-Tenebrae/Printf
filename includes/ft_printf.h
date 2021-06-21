@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 14:15:32 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/21 18:31:08 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int			ft_printf_p(t_value_printf *value_printf, va_list *arg);
 /* *********************************** n ************************************ */
 /* *********************************** f ************************************ */
 int			ft_printf_f(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_f_conditionning_1(t_value_printf *value_printf, int l, \
+				double f);
 int			ft_printf_conditionning_width_f(t_value_printf *value_printf, \
 				int l, char **pre_value, char **post_value);
 int			ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
@@ -76,6 +78,8 @@ int			ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
 /* *********************************** e ************************************ */
 int			ft_printf_e(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
+int			ft_printf_e_conditionning_1(t_value_printf *value_printf, int l, \
+				double f, int is_upper);
 /* *********************************** g ************************************ */
 /* ************************************************************************** */
 /*                             CONDITIONNING TOOL                             */
