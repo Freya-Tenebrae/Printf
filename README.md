@@ -22,10 +22,10 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] x
 - [x] X
 - [x] %
-- [ ] n (need to do major modification to be possible : secure malloc and do 2 version (with and without bonus) before doing this)
-- [x] f (precision to test on 42'mac --> round)
+- [ ] n `(need to do major modification to be possible : secure malloc and do 2 version (with and without bonus) before doing this)`
+- [x] f `(precision to test on 42'mac --> round)`
 - [ ] g 
-- [x] e (precision to test on 42'mac --> round)
+- [x] e `(precision to test on 42'mac --> round)`
 
 ### Flag :
 
@@ -46,6 +46,6 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 - [ ] Norm `ft_print_tool_3 need to be done --> ft_ftoa() need to be spleet (too long and have too many variable)`
 - [x] Leaks
-- [ ] Securisation of memory allocation
+- [ ] Securisation of memory allocation `need to be done on _specifier.c`
 - [ ] Create 2 version for normal and bonuses
 - [ ] Tested on many tester and computer (personal and at 42)
