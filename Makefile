@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/18 10:03:29 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/21 12:46:25 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS=$(addprefix ${FOLDER}/, \
 	ft_printf_o_2.c \
 	ft_printf_x_1.c \
 	ft_printf_x_2.c \
-	ft_printf_f.c)
+	ft_printf_f.c \
+	ft_printf_e.c)
 SRCS_BONUS=$(addprefix ${FOLDER_BONUS}/, ft_printf_bonus.c)
 OBJS=$(SRCS:.c=.o)
 OBJS_BONUS=$(SRCS_BONUS:.c=.o)

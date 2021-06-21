@@ -6,14 +6,14 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 09:49:38 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/19 15:07:48 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/21 12:45:08 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_printf_conditionning_width_f(t_value_printf *value_printf, \
-	int l, char **pre_value, char **post_value)
+int	ft_printf_conditionning_width_f(t_value_printf *value_printf, int l, \
+	char **pre_value, char **post_value)
 {
 	char	*tmp;
 
@@ -41,7 +41,7 @@ static int	ft_printf_conditionning_width_f(t_value_printf *value_printf, \
 	return (l);
 }
 
-static int	ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
+int	ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
 	double f, char **post_value)
 {
 	char		*tmp;

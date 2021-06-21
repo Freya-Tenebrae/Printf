@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:00:44 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/19 15:09:12 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/21 14:55:09 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,34 @@ int	ft_getlen_ull(unsigned long long n, int i)
 		len++;
 	}
 	return (len);
+}
+
+char	*ft_itoa_power(int power_ten)
+{
+	char	*str;
+
+	if (power_ten == 0)
+		return (ft_strdup("+00"));
+	str = malloc(sizeof(char) * 4);
+	if (power_ten < 0)
+	{
+		str[0] = '-';
+		power_ten *= -1;
+	}
+	else
+		str[0] = '+';
+	if (power_ten < 10 && power_ten > -10)
+	{
+		str[1] = '0';
+		str[2] = '0' + power_ten;
+	}
+	else
+	{
+		str[1] = power_ten / 10;
+		str[2] = power_ten % 10;
+	}
+	str[3] = '\0';
+	return (str);
 }
 
 char	*ft_nftoa(double f, int precision)

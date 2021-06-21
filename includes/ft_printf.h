@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/18 11:05:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/21 14:15:32 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,13 @@ int			ft_printf_p(t_value_printf *value_printf, va_list *arg);
 /* *********************************** n ************************************ */
 /* *********************************** f ************************************ */
 int			ft_printf_f(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_conditionning_width_f(t_value_printf *value_printf, \
+				int l, char **pre_value, char **post_value);
+int			ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
+				double f, char **post_value);
 /* *********************************** e ************************************ */
+int			ft_printf_e(t_value_printf *value_printf, va_list *arg, \
+				int is_upper);
 /* *********************************** g ************************************ */
 /* ************************************************************************** */
 /*                             CONDITIONNING TOOL                             */
@@ -93,6 +99,7 @@ void		ft_putwstr(wchar_t *s);
 /* ************************************************************************** */
 int			ft_getlen_ull(unsigned long long n, int i);
 int			ft_getlen_ll(long long n, int i);
+char		*ft_itoa_power(int power_ten);
 char		*ft_nftoa(double f, int precision);
 int			ft_init_value_lst(t_value_printf *value_printf);
 char		*ft_straddcharendstr(const char *s, char const c);
