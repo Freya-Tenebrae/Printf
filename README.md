@@ -23,7 +23,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] X
 - [x] %
 - [ ] n
-- [ ] f `dont work with infinity value (1/0, over 10^38, or under -10^38) and for even rounding`
+- [x] f
 - [ ] g
 - [ ] e
 
@@ -44,8 +44,8 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 ### Other
 
-- [ ] Norm `ft_printf_f & ft_print_tool_3 need to be done`
+- [ ] Norm `ft_print_tool_3 need to be done --> ft_ftoa() need to be spleet (too long and have too many variable)`
 - [x] Leaks
 - [ ] Securisation of memory allocation
 - [ ] Create 2 version for normal and bonuses
-- [ ] Tested on 4 or more testers
+- [ ] Tested on many tester and computer (personal and at 42)
