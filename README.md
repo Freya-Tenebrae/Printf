@@ -37,7 +37,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] +
 - [x] Space
 - [ ] #
-- [ ] l (exept for undone specifier) `c and s need to be done`
+- [x] l (exept for undone specifier) `c and s need to be verified at 42`
 - [x] ll (exept for undone specifier)
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
