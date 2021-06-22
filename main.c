@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 20:16:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/22 11:19:03 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/ft_printf.h"
@@ -710,51 +710,10 @@ int main()
     printf("|%020.20f|\n", 0.0 / 0);
     ft_printf("|%020.20f|\n", 0.0 / 0);
     ft_printf("-------------------------\n");
-    
-    ft_printf("\n");
-    ft_printf("\n");
-    ft_printf("\n");
 
-    printf("------------ƀ-ɏ-࿚-------------\n");
-    
     ft_printf("\n");
     ft_printf("\n");
     ft_printf("\n");
-
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'ƀ');
-    ft_printf("|%lc|\n", u'ƀ');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'ɏ');
-    ft_printf("|%lc|\n", u'ɏ');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'ɐ');
-    ft_printf("|%lc|\n", u'ɐ');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'ʯ');
-    ft_printf("|%lc|\n", u'ʯ');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'ʰ');
-    ft_printf("|%lc|\n", u'ʰ');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'˿');
-    ft_printf("|%lc|\n", u'˿');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'ୟ');
-    ft_printf("|%lc|\n", u'ୟ');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'௫');
-    ft_printf("|%lc|\n", u'௫');
-    ft_printf("-------------------------\n");
-    printf("|%lc|\n", u'࿚');
-    ft_printf("|%lc|\n", u'࿚');
-    ft_printf("-------------------------\n");
-    
-    ft_printf("\n");
-    ft_printf("\n");
-    ft_printf("\n");
-    
-    ft_printf("------------ƀ-ɏ-࿚-------------\n");
 
     printf("|st120 %*s|\n", 100, "hello");
     ft_printf("|st120 %*s|\n", 100, "hello");
@@ -871,4 +830,96 @@ int main()
     printf("|%+.1d|\n", -5);
     printf("|%+.1d|\n", -5);
     ft_printf("-------------------------\n");
+
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    printf("------------ƀ-ɏ-࿚-------------\n");
+    
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", 120);
+    ft_printf("|ft_printf :%lc|\n", 120);
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", 24);
+    ft_printf("|ft_printf :%lc|\n", 243);
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'ƀ');
+    ft_printf("|ft_printf :%lc|\n", u'ƀ');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'ɏ');
+    ft_printf("|ft_printf :%lc|\n", u'ɏ');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'ɐ');
+    ft_printf("|ft_printf :%lc|\n", u'ɐ');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'ʯ');
+    ft_printf("|ft_printf :%lc|\n", u'ʯ');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'ʰ');
+    ft_printf("|ft_printf :%lc|\n", u'ʰ');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'˿');
+    ft_printf("|ft_printf :%lc|\n", u'˿');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'ୟ');
+    ft_printf("|ft_printf :%lc|\n", u'ୟ');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'௫');
+    ft_printf("|ft_printf :%lc|\n", u'௫');
+    ft_printf("-------------------------\n");
+    printf("|   printf :%lc|\n", u'࿚');
+    ft_printf("|ft_printf :%lc|\n", u'࿚');
+    ft_printf("-------------------------\n");
+    
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "ƀ");
+    ft_printf("|ft_printf :%s|\n", "ƀ");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "ɏ");
+    ft_printf("|ft_printf :%s|\n", "ɏ");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "ɐ");
+    ft_printf("|ft_printf :%s|\n", "ɐ");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "ʯ");
+    ft_printf("|ft_printf :%s|\n", "ʯ");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "ʰ");
+    ft_printf("|ft_printf :%s|\n", "ʰ");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "˿");
+    ft_printf("|ft_printf :%s|\n", "˿");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "ୟ");
+    ft_printf("|ft_printf :%s|\n", "ୟ");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "௫");
+    ft_printf("|ft_printf :%s|\n", "௫");
+    ft_printf("-------------------------\n");
+    printf("|   printf :%s|\n", "࿚");
+    ft_printf("|ft_printf :%s|\n", "࿚");
+    ft_printf("-------------------------\n");
+
+    ft_printf("\n");
+    ft_printf("\n");
+    ft_printf("\n");
+
+    wchar_t  sw[] = {' ', u'ƀ', u'ɏ', u'ɐ', ' ', u'ʯ', ' ', u'ʰ', u'˿', ' ', u'ୟ', ' ', u'௫', ' ', ' ', u'࿚', 0};
+    printf("|   printf : %ls|\n", sw);
+    ft_printf("|ft_printf :%ls|\n", sw);
+
+    ft_putstr("test de ft_putwchar : |");
+    ft_putwchar(u'௫');
+    ft_putstr("|\n");
+    
+    ft_printf("------------ƀ-ɏ-࿚-------------\n");
 }
