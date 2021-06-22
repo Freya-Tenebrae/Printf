@@ -23,9 +23,9 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] X
 - [x] %
 - [ ] n `(need to do major modification to be possible : to do in last)`
-- [x] f `(precision to test on 42'mac --> round)`
-- [ ] g 
-- [x] e `(precision to test on 42'mac --> round)`
+- [x] f `(precision with more than 20 numbers in variable aren't correct)`
+- [ ] g `(precision with more than 20 numbers in variable aren't correct)`
+- [x] e `(precision with more than 20 numbers in variable aren't correct)`
 
 ### Flag :
 
@@ -37,7 +37,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] +
 - [x] Space
 - [ ] #
-- [x] l (exept for undone specifier) `c and s need to be verified at 42`
+- [x] l (exept for undone specifier) `c and s doesn't work correctly`
 - [x] ll (exept for undone specifier)
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
