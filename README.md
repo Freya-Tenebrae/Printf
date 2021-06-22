@@ -24,8 +24,8 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] %
 - [ ] n `(need to do major modification to be possible : to do in last)`
 - [x] f `(precision with more than 20 numbers in variable aren't correct)`
-- [ ] g `(precision with more than 20 numbers in variable aren't correct)`
 - [x] e `(precision with more than 20 numbers in variable aren't correct)`
+- [ ] g 
 
 ### Flag :
 
