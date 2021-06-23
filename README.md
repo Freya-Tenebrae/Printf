@@ -45,7 +45,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 ### Other
 
 - [x] Leaks
-- [ ] Norm
+- [x] Norm
 - [ ] clean code (harmonizing the code and avoid repetitions) `need to be done on _oux.c` 
 - [ ] simplify specifier with l/ll/h/hh `need to be done on _oux.c` 
 - [ ] Securisation of memory allocation `need to be done on _oux.c`
