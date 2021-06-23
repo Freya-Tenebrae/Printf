@@ -12,8 +12,8 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 ### Specifier :
 
-- [x] c
-- [x] s
+- [x] c 
+- [x] s `need to do ft_printf_sw_conditionning_1 & 2`
 - [x] p
 - [x] d
 - [x] i
@@ -22,10 +22,10 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] x
 - [x] X
 - [x] %
-- [ ] n `(need to do major modification to be possible : to do in last)`
-- [x] f `(precision to test on 42'mac --> round)`
+- [x] f `(precision with more than 20 numbers in variable aren't correct)`
+- [x] e `(precision with more than 20 numbers in variable aren't correct)`
 - [ ] g 
-- [x] e `(precision to test on 42'mac --> round)`
+- [ ] n `(need to do major modification to be possible : to do in last)`
 
 ### Flag :
 
@@ -36,17 +36,17 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] *
 - [x] +
 - [x] Space
-- [ ] #
-- [ ] l (exept for undone specifier) `c and s need to be done`
+- [x] l (exept for undone specifier) `c and s doesn't work correctly`
 - [x] ll (exept for undone specifier)
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
+- [ ] #
 
 ### Other
 
-- [ ] Norm `ft_print_tool_3 need to be done --> ft_ftoa() need to be spleet (too long and have too many variable)`
 - [x] Leaks
-- [ ] Securisation of memory allocation `need to be done on _ioux.c`
+- [ ] Norm
+- [ ] clean code (harmonizing the code and avoid repetitions) `need to be done on _oux.c` simplifi specifier with l/ll/h/hh
+- [ ] Securisation of memory allocation `need to be done on _oux.c`
 - [ ] Create 2 version for normal and bonuses
-- [ ] clean code (harmonizing the code and avoid repetitions)
 - [ ] Tested on many tester and computer (personal and at 42)
