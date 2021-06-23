@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 17:05:53 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 19:29:49 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:23:22 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_printf_conditionning_width_f(t_value_printf *value_printf, int l, \
 int	ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
 	double f, char **post_value)
 {
-	char		*tmp;
+	char	*tmp;
 
 	if (value_printf->precision == 0 && value_printf->is_precision == 0)
 		value_printf->precision = 6;
@@ -95,28 +95,28 @@ static int	ft_printf_f_conditionning_2(t_value_printf *value_printf, \
 
 int	ft_printf_f_conditionning_1(t_value_printf *value_printf, double f)
 {
-    char    **value;
-    int     l;
+	char	**value;
+	int		l;
 
-    value = malloc(sizeof(char **) * 2);
-    if (!value)
-        return (-1);
-    value[0] = ft_strdup("");
-    if (!value[0])
-    {
-        free(value);
-        return (-1);
-    }
-    value[1] = ft_strdup("");
-    if (!value[1])
-    {
-        free(value[0]);
-        free(value);
-        return (-1);
-    }
-    l = ft_printf_f_conditionning_2(value_printf, &f, &value);
-    free(value[0]);
-    free(value[1]);
-    free(value);
-    return (l);
+	value = malloc(sizeof(char **) * 2);
+	if (!value)
+		return (-1);
+	value[0] = ft_strdup("");
+	if (!value[0])
+	{
+		free(value);
+		return (-1);
+	}
+	value[1] = ft_strdup("");
+	if (!value[1])
+	{
+		free(value[0]);
+		free(value);
+		return (-1);
+	}
+	l = ft_printf_f_conditionning_2(value_printf, &f, &value);
+	free(value[0]);
+	free(value[1]);
+	free(value);
+	return (l);
 }

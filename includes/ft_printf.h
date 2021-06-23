@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 18:31:08 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/23 12:52:29 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,17 @@ int			ft_get_content(t_value_printf *value_printf, va_list *arg);
 /* ************************************************************************** */
 /* *********************************** c ************************************ */
 int			ft_printf_c(t_value_printf *value_printf, va_list *arg);
-int         ft_printf_c_conditionning_1(t_value_printf *value_printf, \
-                char c);
-int         ft_printf_cw_conditionning_1(t_value_printf *value_printf, \
-                char c);
+int			ft_printf_c_conditionning_1(t_value_printf *value_printf, \
+				char c);
+int			ft_printf_cw_conditionning_1(t_value_printf *value_printf, \
+				char c);
 
 /* *********************************** s ************************************ */
 int			ft_printf_s(t_value_printf *value_printf, va_list *arg);
 /* *********************************** i ************************************ */
 int			ft_printf_i(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_i_conditionning_1(t_value_printf *value_printf, long long i);
+int			ft_printf_i_conditionning_1(t_value_printf *value_printf, \
+				long long i);
 /* *********************************** u ************************************ */
 int			ft_printf_u(t_value_printf *value_printf, va_list *arg);
 int			ft_printf_u_conditionning(t_value_printf *value_printf, int l, \
@@ -106,7 +107,7 @@ void		ft_putwstr(wchar_t *s);
 /* ************************************************************************** */
 int			ft_getlen_ull(unsigned long long n, int i);
 int			ft_getlen_ll(long long n, int i);
-int         ft_wstrlen(const wchar_t *s);
+int			ft_wstrlen(const wchar_t *s);
 char		*ft_itoa_power(int power_ten);
 char		*ft_nftoa(double f, int precision);
 int			ft_init_value_lst(t_value_printf *value_printf);

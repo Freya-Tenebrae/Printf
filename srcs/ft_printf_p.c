@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:16:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 20:06:29 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:03:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static int	ft_printf_p_conditionning_2(t_value_printf *value_printf, \
 	unsigned long long p, char ***value)
 {
-    int l;
-    
-    l = ft_getlen_ull(p, 16) + 2;
+	int	l;
+
+	l = ft_getlen_ull(p, 16) + 2;
 	if (p == 0 && value_printf->precision == 0 && \
 		value_printf->is_precision == 1)
 		l--;
@@ -38,7 +38,7 @@ static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, \
 	unsigned long long p)
 {
 	char	**value;
-    int     l;
+	int		l;
 
 	value = malloc(sizeof(char **) * 2);
 	if (!value)
@@ -66,5 +66,5 @@ static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, \
 int	ft_printf_p(t_value_printf *value_printf, va_list *arg)
 {
 	return (ft_printf_p_conditionning_1(value_printf, \
-        va_arg(*arg, unsigned long long)));
+		va_arg(*arg, unsigned long long)));
 }

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:16:47 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 19:48:01 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:20:58 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 static int	ft_printf_conditionning_precision_s(t_value_printf *value_printf, \
 	int l, char **pre_value, char *s)
 {
-    char *tmp;
+	char	*tmp;
+
 	if (value_printf->precision < l && value_printf->precision >= 0 \
 		&& value_printf->is_precision == 1)
 	{
@@ -26,60 +27,61 @@ static int	ft_printf_conditionning_precision_s(t_value_printf *value_printf, \
 		tmp = ft_strdup(s);
 	if (!tmp)
 		return (-1);
-    free(*pre_value);
-    *pre_value = tmp;
+	free(*pre_value);
+	*pre_value = tmp;
 	return (l);
 }
 
-static int    ft_printf_s_conditionning_2(t_value_printf *value_printf, \
-    char *s, char ***value)
+static int	ft_printf_s_conditionning_2(t_value_printf *value_printf, \
+	char *s, char ***value)
 {
-    int l;
+	int	l;
 
-    l = ft_strlen(s);
-    l = ft_printf_conditionning_precision_s(value_printf, l, &(*value)[0], s);
-    if (l < 0)
-        return (l);
-    l = ft_printf_conditionning_width(value_printf, l, &(*value)[0], &(*value)[1]);
-    if (l < 0)
-        return (l);
-    ft_putstr((*value)[0]);
-    ft_putstr((*value)[1]);
-    return (l);
+	l = ft_strlen(s);
+	l = ft_printf_conditionning_precision_s(value_printf, l, &(*value)[0], s);
+	if (l < 0)
+		return (l);
+	l = ft_printf_conditionning_width(value_printf, l, &(*value)[0], \
+		&(*value)[1]);
+	if (l < 0)
+		return (l);
+	ft_putstr((*value)[0]);
+	ft_putstr((*value)[1]);
+	return (l);
 }
 
 static int	ft_printf_s_conditionning_1(t_value_printf *value_printf, \
 	char *s)
 {
-	char    **value;
-    int     l;
+	char	**value;
+	int		l;
 
 	value = malloc(sizeof(char **) * 2);
-    if (!value)
-        return (-1);
-    value[0] = ft_strdup("");
-    if (!value[0])
-    {
-        free(value);
-        return (-1);
-    }
-    value[1] = ft_strdup("");
-    if (!value[1])
-    {
-        free(value[0]);
-        free(value);
-        return (-1);
-    }
-    l = ft_printf_s_conditionning_2(value_printf, s, &value);
-    free(value[0]);
-    free(value[1]);
-    free(value);
-    return (l);
+	if (!value)
+		return (-1);
+	value[0] = ft_strdup("");
+	if (!value[0])
+	{
+		free(value);
+		return (-1);
+	}
+	value[1] = ft_strdup("");
+	if (!value[1])
+	{
+		free(value[0]);
+		free(value);
+		return (-1);
+	}
+	l = ft_printf_s_conditionning_2(value_printf, s, &value);
+	free(value[0]);
+	free(value[1]);
+	free(value);
+	return (l);
 }
 
 static int	ft_printf_s_l(t_value_printf *value_printf, wchar_t *s)
 {
-    (void)value_printf;
+	(void)value_printf;
 	ft_putwstr(s);
 	return (0);
 }

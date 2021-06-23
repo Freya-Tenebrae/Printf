@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:00:44 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 17:00:26 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:24:28 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ int	ft_getlen_ull(unsigned long long n, int i)
 	return (len);
 }
 
-int ft_wstrlen(const wchar_t *s)
+int	ft_wstrlen(const wchar_t *s)
 {
-    size_t    i;
+	int	len;
 
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    return (i);
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
 
 char	*ft_itoa_power(int power_ten)

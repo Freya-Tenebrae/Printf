@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:17:31 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/21 19:30:55 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:06:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	ft_printf_e_conditionning_1(t_value_printf *value_printf, double f, \
 	int is_upper)
 {
 	char	**value;
-    int     l;
+	int		l;
 
 	value = malloc(sizeof(char **) * 2);
 	if (!value)
