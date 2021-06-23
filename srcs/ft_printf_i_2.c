@@ -12,25 +12,58 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf_i_conditionning(t_value_printf *value_printf, int l, long long i)
+static int    ft_printf_i_conditionning_2(t_value_printf *value_printf, \
+    long long *i, char ***value)
 {
-	char	*pre_value;
-	char	*post_value;
+    int    tmpl;
+    int    l;
 
-	pre_value = ft_strdup("");
-	post_value = ft_strdup("");
-	l = ft_printf_conditionning_precision(value_printf, l, &pre_value);
-	l += ft_printf_conditionning_sign(value_printf, &i, &pre_value);
-	if (value_printf->is_precision == 1 && value_printf->precision == 0 \
-		&& i == 0)
-		l--;
-	l = ft_printf_conditionning_width(value_printf, l, &pre_value, &post_value);
-	ft_putstr(pre_value);
-	if (value_printf->is_precision != 1 || value_printf->precision != 0 \
-		|| i != 0)
-		ft_putnbr_ull(i);
-	ft_putstr(post_value);
-	free(pre_value);
-	free(post_value);
-	return (l);
+    l = ft_getlen_ll(*i, 10);
+    l = ft_printf_conditionning_precision(value_printf, l, &(*value)[0]);
+    if (l < 0)
+        return (l);
+    tmpl = ft_printf_conditionning_sign(value_printf, i, &(*value)[0]);
+    if (tmpl < 0)
+        return (tmpl);
+    l += tmpl;
+    if (value_printf->is_precision == 1 && value_printf->precision == 0 \
+        && *i == 0)
+        l-= 1;
+    l = ft_printf_conditionning_width(value_printf, l, &(*value)[0], &(*value)[1]);
+    if (l < 0)
+        return (l);
+    ft_putstr((*value)[0]);
+    if (value_printf->is_precision != 1 || value_printf->precision != 0 \
+        || *i != 0)
+        ft_putnbr_ull(*i);
+    ft_putstr((*value)[1]);
+    return (l);
+}
+
+int	ft_printf_i_conditionning_1(t_value_printf *value_printf, long long i)
+{
+	char    **value;
+    int     l;
+
+    value = malloc(sizeof(char **) * 2);
+    if (!value)
+        return (-1);
+    value[0] = ft_strdup("");
+    if (!value[0])
+    {
+        free(value);
+        return (-1);
+    }
+    value[1] = ft_strdup("");
+    if (!value[1])
+    {
+        free(value[0]);
+        free(value);
+        return (-1);
+    }
+    l = ft_printf_i_conditionning_2(value_printf, &i, &value);
+    free(value[0]);
+    free(value[1]);
+    free(value);
+    return (l);
 }

@@ -13,9 +13,11 @@
 #include "../includes/ft_printf.h"
 
 static int	ft_printf_p_conditionning_2(t_value_printf *value_printf, \
-	int l, unsigned long long p, char ***value)
+	unsigned long long p, char ***value)
 {
-	l += 2;
+    int l;
+    
+    l = ft_getlen_ull(p, 16) + 2;
 	if (p == 0 && value_printf->precision == 0 && \
 		value_printf->is_precision == 1)
 		l--;
@@ -32,10 +34,11 @@ static int	ft_printf_p_conditionning_2(t_value_printf *value_printf, \
 	return (l);
 }
 
-static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, int l, \
+static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, \
 	unsigned long long p)
 {
 	char	**value;
+    int     l;
 
 	value = malloc(sizeof(char **) * 2);
 	if (!value)
@@ -53,7 +56,7 @@ static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, int l, \
 		free(value);
 		return (-1);
 	}
-	l = ft_printf_p_conditionning_2(value_printf, l, p, &value);
+	l = ft_printf_p_conditionning_2(value_printf, p, &value);
 	free(value[0]);
 	free(value[1]);
 	free(value);
@@ -62,10 +65,6 @@ static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, int l, \
 
 int	ft_printf_p(t_value_printf *value_printf, va_list *arg)
 {
-	unsigned long long	p;
-	int					l;
-
-	p = va_arg(*arg, unsigned long long);
-	l = ft_getlen_ull(p, 16);
-	return (ft_printf_p_conditionning_1(value_printf, l, p));
+	return (ft_printf_p_conditionning_1(value_printf, \
+        va_arg(*arg, unsigned long long)));
 }

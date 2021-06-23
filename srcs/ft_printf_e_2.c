@@ -89,10 +89,11 @@ static int	ft_printf_e_conditionning_2(t_value_printf *value_printf, \
 	return (l);
 }
 
-int	ft_printf_e_conditionning_1(t_value_printf *value_printf, int l, double f, \
+int	ft_printf_e_conditionning_1(t_value_printf *value_printf, double f, \
 	int is_upper)
 {
 	char	**value;
+    int     l;
 
 	value = malloc(sizeof(char **) * 2);
 	if (!value)

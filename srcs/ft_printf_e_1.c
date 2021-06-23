@@ -14,8 +14,6 @@
 
 int	ft_printf_e(t_value_printf *value_printf, va_list *arg, int is_upper)
 {
-	double	f;
-
-	f = va_arg(*arg, double);
-	return (ft_printf_e_conditionning_1(value_printf, 0, f, is_upper));
+	return (ft_printf_e_conditionning_1(value_printf, va_arg(*arg, double), \
+        is_upper));
 }
