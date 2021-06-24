@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/22 11:19:03 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 07:04:29 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/ft_printf.h"
@@ -980,4 +980,5 @@ int main()
     printf("|%f|\n", 1.0);
     ft_printf("|%f|\n", 1.0);
     ft_printf("-------------------------\n");
+    ft_printf("12345");
 }

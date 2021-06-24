@@ -6,45 +6,41 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:17:59 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/19 15:33:38 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 07:29:45 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_get_flags(char *str, int i, t_value_printf *value_printf)
+static int	ft_get_flags(char **pstr, t_value_printf *value_printf)
 {
 	char	*tmp;
-	int		j;
 
-	j = 0;
-	while (str[i + j] == '-' || str[i + j] == '+' || str[i + j] == ' ' || \
-		str[i + j] == '#' || str[i + j] == '0')
+	while (**pstr == '-' || **pstr == '+' || **pstr == ' ' || \
+		**pstr == '#' || **pstr == '0')
 	{
-		tmp = ft_straddcharendstr(value_printf->flags, str[i + j]);
+		tmp = ft_straddcharendstr(value_printf->flags, **pstr);
 		free(value_printf->flags);
 		if (tmp == NULL)
 			return (-1);
 		value_printf->flags = tmp;
-		j++;
+		*pstr += 1;
 	}
-	return (j);
+	return (0);
 }
 
-static int 	ft_get_width(char *str, int i, t_value_printf *value_printf, \
+static int 	ft_get_width(char **pstr, t_value_printf *value_printf, \
 	va_list *arg)
 {
-	int		j;
 	char	*tmp;
 
-	j = 0;
-	if (ft_isdigit(str[i + j]) == 1)
+	if (ft_isdigit(**pstr) == 1)
 	{
-		value_printf->width = ft_atoi(&str[i + j]);
-		while (ft_isdigit(str[i + j]) == 1)
-			j++;
+		value_printf->width = ft_atoi(*pstr);
+		while (ft_isdigit(**pstr) == 1)
+			*pstr += 1;
 	}
-	else if (str[i + j] == '*')
+	else if (**pstr == '*')
 	{
 		value_printf->width = va_arg(*arg, int);
 		if (value_printf->width < 0)
@@ -56,47 +52,44 @@ static int 	ft_get_width(char *str, int i, t_value_printf *value_printf, \
 				return (-1);
 			value_printf->flags = tmp;
 		}
-		j++;
+		*pstr += 1;
 	}
-	return (j);
+	return (0);
 }
 
-static int	ft_get_precision(char *str, int i, t_value_printf *value_printf, \
+static int	ft_get_precision(char **pstr, t_value_printf *value_printf, \
 	va_list *arg)
 {
-	int		j;
-
-	j = 0;
-	if (str[i + j] == '.')
+	if (**pstr == '.')
 	{
 		value_printf->is_precision = 1;
-		j++;
-		if (ft_isdigit(str[i + j]) == 1)
+		*pstr += 1;
+		if (ft_isdigit(**pstr) == 1)
 		{
-			value_printf->precision = ft_atoi(&str[i + j]);
-			while (ft_isdigit(str[i + j]) == 1)
-				j++;
+			value_printf->precision = ft_atoi(*pstr);
+			while (ft_isdigit(**pstr) == 1)
+				*pstr += 1;
 		}
-		else if (str[i + j] == '*')
+		else if (**pstr == '*')
 		{
 			value_printf->precision = va_arg(*arg, int);
-			j++;
+			*pstr += 1;
 		}
 	}
-	return (j);
+	return (0);
 }
 
-static int	ft_get_length(char *str, int i, t_value_printf *value_printf)
+static int	ft_get_length(char **pstr, t_value_printf *value_printf)
 {
-	int		j;
+	int	i;
 
-	j = 0;
-	if (str[i + j] == 'l' || str[i + j] == 'h')
+	i = 0;
+	if ((*pstr)[i] == 'l' || (*pstr)[i] == 'h')
 	{
-		j++;
-		if (str[i + j] == 'l' || str[i + j] == 'h')
-			j++;
-		value_printf->length = ft_strndup(&str[i], j);
+		i++;
+		if ((*pstr)[i] == 'l' || (*pstr)[i] == 'h')
+			i++;
+		value_printf->length = ft_strndup(*pstr, i);
 	}
 	else
 		value_printf->length = ft_strdup("");
@@ -105,27 +98,22 @@ static int	ft_get_length(char *str, int i, t_value_printf *value_printf)
 		free(value_printf->flags);
 		return (-1);
 	}
-	return (j);
+	while (i-- > 0)
+		*pstr += 1;
+	return (0);
 }
 
-int	ft_parsing(char *str, int *i, t_value_printf *value_printf, va_list *arg)
+int	ft_parsing(char **pstr, t_value_printf *value_printf, va_list *arg)
 {
-	int	tmpi;
-
-	tmpi = ft_get_flags(str, *i, value_printf);
-	if (tmpi < 0)
+	if (ft_get_flags(pstr, value_printf) < 0)
 		return (-1);
-	*i += tmpi;
-	tmpi = ft_get_width(str, *i, value_printf, arg);
-	if (tmpi < 0)
+	if (ft_get_width(pstr, value_printf, arg) < 0)
 		return (-1);
-	*i += tmpi;
-	*i += ft_get_precision(str, *i, value_printf, arg);
-	tmpi = ft_get_length(str, *i, value_printf);
-	if (tmpi < 0)
+	if (ft_get_precision(pstr, value_printf, arg) < 0)
 		return (-1);
-	*i += tmpi;
-	value_printf->specifier = str[*i];
-	*i += 1;
+	if (ft_get_length(pstr, value_printf) < 0)
+		return (-1);
+	value_printf->specifier = **pstr;
+	*pstr += 1;
 	return (ft_get_content(value_printf, arg));
 }

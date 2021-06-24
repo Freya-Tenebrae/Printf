@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 05:37:05 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 06:44:00 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ typedef struct s_value_printf
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
 int			ft_printf(const char *input, ...);
-int			ft_parsing(char *str, int *i, t_value_printf *value_printf, \
-				va_list *arg);
+int			ft_parsing(char **str, t_value_printf *value_printf, va_list *arg);
 int			ft_get_content(t_value_printf *value_printf, va_list *arg);
 /* ************************************************************************** */
 /*                                 SPECIFIER                                  */
