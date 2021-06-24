@@ -1,16 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_f_2.c                                    :+:      :+:    :+:   */
+/*   ft_printf_tools_conditioning_2.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 17:05:53 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/23 13:23:22 by cmaginot         ###   ########.fr       */
+/*   Created: 2021/06/24 03:58:00 by cmaginot          #+#    #+#             */
+/*   Updated: 2021/06/24 05:38:20 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+int	ft_printf_conditionning_precision_ws(t_value_printf *value_printf, \
+	int l, wchar_t **ws)
+{
+	wchar_t	*tmp;
+
+	if (value_printf->precision < l && value_printf->precision >= 0 \
+		&& value_printf->is_precision == 1)
+	{
+		tmp = ft_wstrndup(*ws, value_printf->precision);
+		l = value_printf->precision;
+	}
+	else
+		tmp = ft_wstrdup(*ws);
+	if (!tmp)
+		return (-1);
+	*ws = tmp;
+	return (l);
+}
+
+int	ft_printf_conditionning_precision_s(t_value_printf *value_printf, \
+	int l, char **pre_value, char *s)
+{
+	char	*tmp;
+
+	if (value_printf->precision < l && value_printf->precision >= 0 \
+		&& value_printf->is_precision == 1)
+	{
+		tmp = ft_strndup(s, value_printf->precision);
+		l = value_printf->precision;
+	}
+	else
+		tmp = ft_strdup(s);
+	if (!tmp)
+		return (-1);
+	free(*pre_value);
+	*pre_value = tmp;
+	return (l);
+}
 
 static char	*ft_printf_conditionning_width_f_0(t_value_printf *value_printf, \
 	char **pre_value, char **post_value)
@@ -68,55 +107,4 @@ int	ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
 	free(*post_value);
 	*post_value = tmp;
 	return (ft_strlen(*post_value));
-}
-
-static int	ft_printf_f_conditionning_2(t_value_printf *value_printf, \
-	double *f, char ***value)
-{
-	int	l;
-	int	tmpl;
-
-	l = ft_printf_conditionning_precision_f(value_printf, *f, &(*value)[1]);
-	if (l < 0)
-		return (l);
-	tmpl = ft_printf_conditionning_sign(value_printf, (long long *)f, \
-		&(*value)[0]);
-	if (tmpl < 0)
-		return (tmpl);
-	l += tmpl;
-	l = ft_printf_conditionning_width_f(value_printf, l, &(*value)[0], \
-		&(*value)[1]);
-	if (l < 0)
-		return (l);
-	ft_putstr((*value)[0]);
-	ft_putstr((*value)[1]);
-	return (l);
-}
-
-int	ft_printf_f_conditionning_1(t_value_printf *value_printf, double f)
-{
-	char	**value;
-	int		l;
-
-	value = malloc(sizeof(char **) * 2);
-	if (!value)
-		return (-1);
-	value[0] = ft_strdup("");
-	if (!value[0])
-	{
-		free(value);
-		return (-1);
-	}
-	value[1] = ft_strdup("");
-	if (!value[1])
-	{
-		free(value[0]);
-		free(value);
-		return (-1);
-	}
-	l = ft_printf_f_conditionning_2(value_printf, &f, &value);
-	free(value[0]);
-	free(value[1]);
-	free(value);
-	return (l);
 }

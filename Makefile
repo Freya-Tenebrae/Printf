@@ -6,36 +6,31 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/22 18:07:07 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/24 05:27:01 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
 SRCS=$(addprefix ${FOLDER}/, \
 	ft_printf.c \
-	ft_printf_pars.c \
 	ft_printf_get_content.c \
-	ft_printf_conditioning.c \
-	ft_printf_tools_1.c \
-	ft_printf_tools_2.c \
-	ft_printf_tools_3.c \
-	ft_printf_tools_4.c \
-	ft_printf_s.c \
-	ft_printf_c_1.c \
-	ft_printf_c_2.c \
-	ft_printf_p.c \
-	ft_printf_i_1.c \
-	ft_printf_i_2.c \
-	ft_printf_u_1.c \
-	ft_printf_u_2.c \
-	ft_printf_o_1.c \
-	ft_printf_o_2.c \
-	ft_printf_x_1.c \
-	ft_printf_x_2.c \
-	ft_printf_f_1.c \
-	ft_printf_f_2.c \
-	ft_printf_e_1.c \
-	ft_printf_e_2.c)
+	ft_printf_pars.c \
+	ft_printf_specifier_c.c \
+	ft_printf_specifier_e.c \
+	ft_printf_specifier_f.c \
+	ft_printf_specifier_i.c \
+	ft_printf_specifier_o.c \
+	ft_printf_specifier_p.c \
+	ft_printf_specifier_s.c \
+	ft_printf_specifier_u.c \
+	ft_printf_specifier_x.c \
+	ft_printf_tools_conditioning_1.c \
+	ft_printf_tools_conditioning_2.c \
+	ft_printf_tools_ftoa.c \
+	ft_printf_tools_lenght.c \
+	ft_printf_tools_other.c \
+	ft_printf_tools_printing.c \
+	ft_printf_tools_utility.c)
 SRCS_BONUS=$(addprefix ${FOLDER_BONUS}/, ft_printf_bonus.c)
 OBJS=$(SRCS:.c=.o)
 OBJS_BONUS=$(SRCS_BONUS:.c=.o)

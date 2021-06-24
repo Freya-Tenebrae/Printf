@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_tools_1.c                                :+:      :+:    :+:   */
+/*   ft_printf_tools_utility.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 13:34:50 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/18 10:01:48 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 05:32:09 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,44 +25,33 @@ int	ft_init_value_lst(t_value_printf *value_printf)
 	return (0);
 }
 
-char	*ft_straddcharendstr(const char *s, char const c)
+int	ft_init_value_conditionning(char ***value)
 {
-	char			*res;
-	size_t			len;
-	unsigned int	i;
-
-	if (s == NULL)
-		return (0);
-	len = ft_strlen(s) + 2;
-	res = malloc(len * sizeof(char));
-	if (!res)
-		return (NULL);
-	ft_bzero(res, len);
-	i = -1;
-	while (s[++i] != '\0')
-		res[i] = s[i];
-	res[i++] = c;
-	res[i] = '\0';
-	return (res);
+	(*value) = malloc(sizeof(char **) * 3);
+	if (!(*value))
+		return (-1);
+	(*value)[2] = NULL;
+	(*value)[0] = ft_strdup("");
+	if (!(*value)[0])
+	{
+		ft_free_value_conditionning(value);
+		return (-1);
+	}
+	(*value)[1] = ft_strdup("");
+	if (!(*value)[1])
+	{
+		ft_free_value_conditionning(value);
+		return (-1);
+	}
+	return (0);
 }
 
-char	*ft_straddcharstartstr(const char *s, char const c)
+void	ft_free_value_conditionning(char ***value)
 {
-	char			*res;
-	size_t			len;
-	unsigned int	i;
+	int	i;
 
-	if (s == NULL)
-		return (0);
-	len = ft_strlen(s) + 2;
-	res = malloc(len * sizeof(char));
-	if (!res)
-		return (NULL);
-	ft_bzero(res, len);
-	i = 0;
-	res[i] = c;
-	while (s[++i - 1] != '\0')
-		res[i] = s[i - 1];
-	res[i] = '\0';
-	return (res);
+	i = -1;
+	while ((*value)[++i] != NULL)
+		free((*value)[i]);
+	free((*value));
 }

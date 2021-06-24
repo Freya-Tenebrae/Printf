@@ -1,32 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_c_1.c                                    :+:      :+:    :+:   */
+/*   ft_printf_tools_lenght.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 14:16:49 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/23 13:02:05 by cmaginot         ###   ########.fr       */
+/*   Created: 2021/06/18 10:00:44 by cmaginot          #+#    #+#             */
+/*   Updated: 2021/06/24 05:29:29 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf_c(t_value_printf *value_printf, va_list *arg)
+int	ft_getlen_ll(long long n, int i)
 {
-	char	c;
+	int	len;
 
-	if (ft_strcmp(value_printf->length, "l") == 0)
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
 	{
-		if (arg == NULL)
-			return (ft_printf_cw_conditionning_1(value_printf, (wint_t) u'%'));
-		else
-			return (ft_printf_cw_conditionning_1(value_printf, \
-				va_arg(*arg, wint_t)));
+		n /= i;
+		len++;
 	}
-	if (arg == NULL)
-		c = '%';
-	else
-		c = (char)va_arg(*arg, int);
-	return (ft_printf_c_conditionning_1(value_printf, c));
+	return (len);
+}
+
+int	ft_getlen_ull(unsigned long long n, int i)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= i;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_wstrlen(const wchar_t *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }

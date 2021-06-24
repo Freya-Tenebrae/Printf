@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/23 12:52:29 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 05:37:05 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,78 +43,58 @@ int			ft_get_content(t_value_printf *value_printf, va_list *arg);
 /* ************************************************************************** */
 /*                                 SPECIFIER                                  */
 /* ************************************************************************** */
-/* *********************************** c ************************************ */
 int			ft_printf_c(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_c_conditionning_1(t_value_printf *value_printf, \
-				char c);
-int			ft_printf_cw_conditionning_1(t_value_printf *value_printf, \
-				char c);
-
-/* *********************************** s ************************************ */
-int			ft_printf_s(t_value_printf *value_printf, va_list *arg);
-/* *********************************** i ************************************ */
-int			ft_printf_i(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_i_conditionning_1(t_value_printf *value_printf, \
-				long long i);
-/* *********************************** u ************************************ */
-int			ft_printf_u(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_u_conditionning(t_value_printf *value_printf, int l, \
-				unsigned long long i);
-/* *********************************** o ************************************ */
-int			ft_printf_o(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_o_conditionning(t_value_printf *value_printf, int l, \
-				unsigned long long i);
-/* *********************************** x ************************************ */
-int			ft_printf_x(t_value_printf *value_printf, va_list *arg, \
-				int is_upper);
-int			ft_printf_x_conditionning(t_value_printf *value_printf, int l, \
-				unsigned long long i, int is_upper);
-/* *********************************** p ************************************ */
-int			ft_printf_p(t_value_printf *value_printf, va_list *arg);
-/* *********************************** n ************************************ */
-/* *********************************** f ************************************ */
-int			ft_printf_f(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_f_conditionning_1(t_value_printf *value_printf, double f);
-int			ft_printf_conditionning_width_f(t_value_printf *value_printf, \
-				int l, char **pre_value, char **post_value);
-int			ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
-				double f, char **post_value);
-/* *********************************** e ************************************ */
 int			ft_printf_e(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
-int			ft_printf_e_conditionning_1(t_value_printf *value_printf, \
-				double f, int is_upper);
+int			ft_printf_f(t_value_printf *value_printf, va_list *arg);
 /* *********************************** g ************************************ */
+int			ft_printf_i(t_value_printf *value_printf, va_list *arg);
+/* *********************************** n ************************************ */
+int			ft_printf_o(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_p(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_s(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_u(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_x(t_value_printf *value_printf, va_list *arg, \
+				int is_upper);
 /* ************************************************************************** */
-/*                             CONDITIONNING TOOL                             */
+/*                                   TOOLS                                    */
 /* ************************************************************************** */
+/* ****************************** Conditioning ****************************** */
 int			ft_printf_conditionning_precision(t_value_printf *value_printf, \
 				int l, char **pre_value);
+int			ft_printf_conditionning_precision_s(t_value_printf *value_printf, \
+				int l, char **pre_value, char *s);
+int			ft_printf_conditionning_precision_ws(t_value_printf *value_printf, \
+				int l, wchar_t **ws);
+int			ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
+				double f, char **post_value);
 int			ft_printf_conditionning_sign(t_value_printf *value_printf, \
 				long long *i, char **pre_value);
 int			ft_printf_conditionning_width(t_value_printf *value_printf, int l, \
 				char **pre_value, char **post_value);
-/* ************************************************************************** */
-/*                               PRINTING TOOL                                */
-/* ************************************************************************** */
+int			ft_printf_conditionning_width_f(t_value_printf *value_printf, \
+				int l, char **pre_value, char **post_value);
+/* ********************************** ftoa ********************************** */
+char		*ft_nftoa(double f, int precision);
+/* ********************************* Lenght ********************************* */
+int			ft_getlen_ull(unsigned long long n, int i);
+int			ft_getlen_ll(long long n, int i);
+int			ft_wstrlen(const wchar_t *s);
+/* ********************************* Other ********************************** */
+char		*ft_itoa_power(int power_ten);
+char		*ft_straddcharendstr(const char *s, char const c);
+char		*ft_straddcharstartstr(const char *s, char const c);
+wchar_t		*ft_wstrndup(const wchar_t *ws1, size_t n);
+wchar_t		*ft_wstrdup(const wchar_t *ws1);
+/* ******************************** Printing ******************************** */
 void		ft_putnbr_oct(unsigned long long n);
 void		ft_putnbr_ull(unsigned long long n);
 void		ft_putnbr_hex(unsigned long long n, int is_upper);
 void		ft_putwchar(wint_t c);
 void		ft_putwstr(wchar_t *s);
-/* ************************************************************************** */
-/*                                 OTHER TOOL                                 */
-/* ************************************************************************** */
-int			ft_getlen_ull(unsigned long long n, int i);
-int			ft_getlen_ll(long long n, int i);
-int			ft_wstrlen(const wchar_t *s);
-char		*ft_itoa_power(int power_ten);
-char		*ft_nftoa(double f, int precision);
+/* ********************************* Utility ******************************** */
 int			ft_init_value_lst(t_value_printf *value_printf);
-char		*ft_straddcharendstr(const char *s, char const c);
-char		*ft_straddcharstartstr(const char *s, char const c);
-/* ************************************************************************** */
-/*                                 BONUS PART                                 */
-/* ************************************************************************** */
+int			ft_init_value_conditionning(char ***value);
+void		ft_free_value_conditionning(char ***value);
 
 #endif

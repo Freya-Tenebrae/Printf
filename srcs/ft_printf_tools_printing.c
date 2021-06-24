@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_tools_2.c                                :+:      :+:    :+:   */
+/*   ft_printf_tools_printing.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:18 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/22 11:13:57 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 05:29:31 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ nb : left -> hexadecimal, right -> binary
 00000080 -- 000007FF: 	110xxxxx 10xxxxxx
 00000800 -- 0000FFFF: 	1110xxxx 10xxxxxx 10xxxxxx
 00010000 -- 001FFFFF: 	11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+
+sources : https://www.cprogramming.com/tutorial/unicode.html
 
 can be treated as :
 c <= 0000007F : c;

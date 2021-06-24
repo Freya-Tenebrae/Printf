@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_e_2.c                                    :+:      :+:    :+:   */
+/*   ft_printf_specifier_e.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:17:31 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/23 13:06:26 by cmaginot         ###   ########.fr       */
+/*   Created: 2021/06/21 12:30:28 by cmaginot          #+#    #+#             */
+/*   Updated: 2021/06/24 05:33:10 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,31 +89,21 @@ static int	ft_printf_e_conditionning_2(t_value_printf *value_printf, \
 	return (l);
 }
 
-int	ft_printf_e_conditionning_1(t_value_printf *value_printf, double f, \
-	int is_upper)
+static int	ft_printf_e_conditionning_1(t_value_printf *value_printf, \
+	double f, int is_upper)
 {
 	char	**value;
 	int		l;
 
-	value = malloc(sizeof(char **) * 2);
-	if (!value)
+	if (ft_init_value_conditionning(&value) != 0)
 		return (-1);
-	value[0] = ft_strdup("");
-	if (!value[0])
-	{
-		free(value);
-		return (-1);
-	}
-	value[1] = ft_strdup("");
-	if (!value[1])
-	{
-		free(value[0]);
-		free(value);
-		return (-1);
-	}
 	l = ft_printf_e_conditionning_2(value_printf, &f, &value, is_upper);
-	free(value[0]);
-	free(value[1]);
-	free(value);
+	ft_free_value_conditionning(&value);
 	return (l);
+}
+
+int	ft_printf_e(t_value_printf *value_printf, va_list *arg, int is_upper)
+{
+	return (ft_printf_e_conditionning_1(value_printf, va_arg(*arg, double), \
+		is_upper));
 }

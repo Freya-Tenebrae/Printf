@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p.c                                      :+:      :+:    :+:   */
+/*   ft_printf_specifier_p.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:16:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/23 13:03:26 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/24 05:33:37 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,19 @@ static int	ft_printf_p_conditionning_2(t_value_printf *value_printf, \
 static int	ft_printf_p_conditionning_1(t_value_printf *value_printf, \
 	unsigned long long p)
 {
+	char	*tmp;
 	char	**value;
 	int		l;
 
-	value = malloc(sizeof(char **) * 2);
-	if (!value)
+	tmp = ft_strdup("0x");
+	if (!tmp)
 		return (-1);
-	value[0] = ft_strdup("0x");
-	if (!value[0])
-	{
-		free(value);
+	if (ft_init_value_conditionning(&value) != 0)
 		return (-1);
-	}
-	value[1] = ft_strdup("");
-	if (!value[1])
-	{
-		free(value[0]);
-		free(value);
-		return (-1);
-	}
-	l = ft_printf_p_conditionning_2(value_printf, p, &value);
 	free(value[0]);
-	free(value[1]);
-	free(value);
+	value[0] = tmp;
+	l = ft_printf_p_conditionning_2(value_printf, p, &value);
+	ft_free_value_conditionning(&value);
 	return (l);
 }
 
