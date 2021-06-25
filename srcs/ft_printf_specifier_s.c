@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:16:47 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 05:37:50 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/25 08:24:50 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static int	ft_printf_s_conditionning_1(t_value_printf *value_printf, \
 	return (l);
 }
 
-int	ft_printf_s(t_value_printf *value_printf, va_list *arg)
+int	ft_printf_specifier_s(t_value_printf *value_printf, va_list *arg)
 {
 	char	*s;
 	wchar_t	*ws;

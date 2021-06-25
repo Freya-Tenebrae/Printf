@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 06:44:00 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/25 08:25:22 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_value_printf
 	char	*length;
 	char	specifier;
 }			t_value_printf;
-/* %[flags][width][.precision][length]specifier */
 /* ************************************************************************** */
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
@@ -42,18 +41,19 @@ int			ft_get_content(t_value_printf *value_printf, va_list *arg);
 /* ************************************************************************** */
 /*                                 SPECIFIER                                  */
 /* ************************************************************************** */
-int			ft_printf_c(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_e(t_value_printf *value_printf, va_list *arg, \
+int			ft_printf_specifier_c(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_e(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
-int			ft_printf_f(t_value_printf *value_printf, va_list *arg);
-/* *********************************** g ************************************ */
-int			ft_printf_i(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_f(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_g(t_value_printf *value_printf, va_list *arg, \
+				int is_upper);
+int			ft_printf_specifier_i(t_value_printf *value_printf, va_list *arg);
 /* *********************************** n ************************************ */
-int			ft_printf_o(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_p(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_s(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_u(t_value_printf *value_printf, va_list *arg);
-int			ft_printf_x(t_value_printf *value_printf, va_list *arg, \
+int			ft_printf_specifier_o(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_p(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_s(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_u(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_specifier_x(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
 /* ************************************************************************** */
 /*                                   TOOLS                                    */

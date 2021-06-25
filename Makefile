@@ -6,7 +6,7 @@
 #    By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 23:11:43 by cmaginot          #+#    #+#              #
-#    Updated: 2021/06/24 05:27:01 by cmaginot         ###   ########.fr        #
+#    Updated: 2021/06/25 08:27:22 by cmaginot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS=$(addprefix ${FOLDER}/, \
 	ft_printf_specifier_c.c \
 	ft_printf_specifier_e.c \
 	ft_printf_specifier_f.c \
+	ft_printf_specifier_g.c \
 	ft_printf_specifier_i.c \
 	ft_printf_specifier_o.c \
 	ft_printf_specifier_p.c \
