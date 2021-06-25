@@ -49,4 +49,8 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] clean code (harmonizing the code and avoid repetitions)
 - [x] Securisation of memory allocation
 - [ ] Create 2 version for normal and bonuses
-- [ ] Tested on many tester and computer (personal and at 42)
+- [ ] Test OK on Tripouille
+- [ ] Test OK on Mazoise
+- [ ] Test OK on Kwevan
+- [ ] Test OK on gavinfielder
+- [ ] test OK on cacharle
