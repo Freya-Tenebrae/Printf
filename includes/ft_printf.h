@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/25 08:25:22 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/29 09:34:26 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ int			ft_get_content(t_value_printf *value_printf, va_list *arg);
 int			ft_printf_specifier_c(t_value_printf *value_printf, va_list *arg);
 int			ft_printf_specifier_e(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
+int			ft_printf_e_conditionning_1(t_value_printf *value_printf, \
+				double f, int is_upper);
 int			ft_printf_specifier_f(t_value_printf *value_printf, va_list *arg);
+int			ft_printf_f_conditionning_1(t_value_printf *value_printf, double f);
 int			ft_printf_specifier_g(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
 int			ft_printf_specifier_i(t_value_printf *value_printf, va_list *arg);
@@ -95,5 +98,6 @@ void		ft_putwstr(wchar_t *s);
 int			ft_init_value_lst(t_value_printf *value_printf);
 int			ft_init_value_conditionning(char ***value);
 void		ft_free_value_conditionning(char ***value);
+int			ft_powerten(int i);
 
 #endif

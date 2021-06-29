@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 08:15:00 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/25 08:29:49 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/29 09:34:43 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,15 @@
 int	ft_printf_specifier_g(t_value_printf *value_printf, va_list *arg, \
 	int is_upper)
 {
-	(void)value_printf;
-	(void)arg;
-	(void)is_upper;
-	return (-1);
+	double value;
+
+	value = va_arg(*arg, double);
+	if (value_printf->precision == 0 && value_printf->is_precision == 0)
+		value_printf->precision = 6;
+	if ((value >= 0.0001 && value < ft_powerten(value_printf->precision)) || \
+		(value <= -0.0001 && \
+		value > ft_powerten(value_printf->precision) * -1) || \
+		value == 0)
+		return (ft_printf_f_conditionning_1(value_printf, value)); // sans print les 0
+	return	(ft_printf_e_conditionning_1(value_printf, value, is_upper));
 }
