@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 13:34:50 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/29 09:34:00 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:15:15 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_free_value_conditionning(char ***value)
 
 int	ft_powerten(int i)
 {
-	int pow;
+	int	pow;
 
 	pow = 1;
 	while (i-- < 0)

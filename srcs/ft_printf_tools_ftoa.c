@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 13:30:50 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 05:29:26 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:15:07 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,9 @@ static char	*ft_ftoa_precision(double f, int len, int precision)
 	free(tmp2);
 	return (str);
 }
+
+/* gerer la precision line 119-120 : arrondir a ce moment, directement sur
+	f pour eviter de nombreux bugs                                            */
 
 char	*ft_nftoa(double f, int precision)
 {

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 14:42:18 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 05:29:31 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:15:12 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,16 @@ from 0x000000 to 0x10FFFF
 
 nb : left -> hexadecimal, right -> binary
 
+UTF-8 is a specific scheme for mapping a sequence of 1-4 bytes to a number
+	from 0x000000 to 0x10FFFF:
+
 00000000 -- 0000007F: 	0xxxxxxx
 00000080 -- 000007FF: 	110xxxxx 10xxxxxx
 00000800 -- 0000FFFF: 	1110xxxx 10xxxxxx 10xxxxxx
 00010000 -- 001FFFFF: 	11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+
+The x's are bits to be extracted from the sequence and glued together to
+	form the final number.
 
 sources : https://www.cprogramming.com/tutorial/unicode.html
 

@@ -6,14 +6,14 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 14:16:49 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/25 08:24:19 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:14:47 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
 static int	ft_printf_cw_conditionning_2(t_value_printf *value_printf, \
-	char *c, char ***value)
+	wint_t c, char ***value)
 {
 	int	l;
 
@@ -22,27 +22,27 @@ static int	ft_printf_cw_conditionning_2(t_value_printf *value_printf, \
 	if (l >= 0)
 	{
 		ft_putstr((*value)[0]);
-		ft_putwchar(*c);
+		ft_putwchar(c);
 		ft_putstr((*value)[1]);
 	}
 	return (l);
 }
 
 static int	ft_printf_cw_conditionning_1(t_value_printf *value_printf, \
-	char c)
+	wint_t c)
 {
 	char	**value;
 	int		l;
 
 	if (ft_init_value_conditionning(&value) != 0)
 		return (-1);
-	l = ft_printf_cw_conditionning_2(value_printf, &c, &value);
+	l = ft_printf_cw_conditionning_2(value_printf, c, &value);
 	ft_free_value_conditionning(&value);
 	return (l);
 }
 
 static int	ft_printf_c_conditionning_2(t_value_printf *value_printf, \
-	char *c, char ***value)
+	char c, char ***value)
 {
 	int	l;
 
@@ -51,7 +51,7 @@ static int	ft_printf_c_conditionning_2(t_value_printf *value_printf, \
 	if (l < 0)
 		return (l);
 	ft_putstr((*value)[0]);
-	ft_putchar(*c);
+	ft_putchar(c);
 	ft_putstr((*value)[1]);
 	return (l);
 }
@@ -64,7 +64,7 @@ static int	ft_printf_c_conditionning_1(t_value_printf *value_printf, \
 
 	if (ft_init_value_conditionning(&value) != 0)
 		return (-1);
-	l = ft_printf_c_conditionning_2(value_printf, &c, &value);
+	l = ft_printf_c_conditionning_2(value_printf, c, &value);
 	ft_free_value_conditionning(&value);
 	return (l);
 }

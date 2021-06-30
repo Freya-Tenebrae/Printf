@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:17:59 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 07:29:45 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:14:41 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	ft_get_flags(char **pstr, t_value_printf *value_printf)
 		**pstr == '#' || **pstr == '0')
 	{
 		tmp = ft_straddcharendstr(value_printf->flags, **pstr);
-		free(value_printf->flags);
 		if (tmp == NULL)
 			return (-1);
+		free(value_printf->flags);
 		value_printf->flags = tmp;
 		*pstr += 1;
 	}
@@ -47,9 +47,9 @@ static int 	ft_get_width(char **pstr, t_value_printf *value_printf, \
 		{
 			value_printf->width *= -1;
 			tmp = ft_straddcharendstr(value_printf->flags, '-');
-			free(value_printf->flags);
 			if (tmp == NULL)
 				return (-1);
+			free(value_printf->flags);
 			value_printf->flags = tmp;
 		}
 		*pstr += 1;
@@ -94,10 +94,7 @@ static int	ft_get_length(char **pstr, t_value_printf *value_printf)
 	else
 		value_printf->length = ft_strdup("");
 	if (!value_printf->length)
-	{
-		free(value_printf->flags);
 		return (-1);
-	}
 	while (i-- > 0)
 		*pstr += 1;
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/29 09:34:26 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:14:37 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int			ft_get_content(t_value_printf *value_printf, va_list *arg);
 /* ************************************************************************** */
 /*                                 SPECIFIER                                  */
 /* ************************************************************************** */
+int			ft_printf_specifier_percent(t_value_printf *value_printf);
 int			ft_printf_specifier_c(t_value_printf *value_printf, va_list *arg);
 int			ft_printf_specifier_e(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
@@ -81,6 +82,7 @@ char		*ft_nftoa(double f, int precision);
 /* ********************************* Lenght ********************************* */
 int			ft_getlen_ull(unsigned long long n, int i);
 int			ft_getlen_ll(long long n, int i);
+/*int			ft_wcharlen(const wint_t c);                                  */
 int			ft_wstrlen(const wchar_t *s);
 /* ********************************* Other ********************************** */
 char		*ft_itoa_power(int power_ten);

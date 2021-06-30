@@ -6,11 +6,25 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 12:08:30 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/25 08:24:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:14:52 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+static int	ft_printf_o_hash(t_value_printf *value_printf, \
+	unsigned long long i, char **tmp)
+{
+	if (ft_strchr(value_printf->flags, '#') != NULL && i != 0)
+	{
+		*tmp = ft_strdup("0");
+		if (!*tmp)
+			return (-1);
+		return (0);
+	}
+	*tmp = NULL;
+	return (0);
+}
 
 static int	ft_printf_o_conditionning_2(t_value_printf *value_printf, \
 	unsigned long long *i, char ***value)
@@ -24,6 +38,8 @@ static int	ft_printf_o_conditionning_2(t_value_printf *value_printf, \
 	if (value_printf->is_precision == 1 && value_printf->precision == 0 \
 		&& *i == 0)
 		l -= 1;
+	if (ft_strchr(value_printf->flags, '#') != NULL && *i != 0)
+		l++;
 	l = ft_printf_conditionning_width(value_printf, l, &(*value)[0], \
 		&(*value)[1]);
 	if (l < 0)
@@ -39,11 +55,25 @@ static int	ft_printf_o_conditionning_2(t_value_printf *value_printf, \
 static int	ft_printf_o_conditionning_1(t_value_printf *value_printf, \
 	unsigned long long i)
 {
+	char	*tmp;
 	char	**value;
 	int		l;
 
+	if (ft_printf_o_hash(value_printf, i, &tmp) < 0)
+		return (-1);
+	if (ft_strchr(value_printf->flags, '#') != NULL && i != 0)
+	{
+		tmp = ft_strdup("0");
+		if (!tmp)
+			return (-1);
+	}
 	if (ft_init_value_conditionning(&value) != 0)
 		return (-1);
+	if (tmp != NULL)
+	{
+		free(value[0]);
+		value[0] = tmp;
+	}
 	l = ft_printf_o_conditionning_2(value_printf, &i, &value);
 	ft_free_value_conditionning(&value);
 	return (l);

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:00:44 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 05:29:29 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 19:15:09 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,23 @@ int	ft_getlen_ull(unsigned long long n, int i)
 	return (len);
 }
 
+/*int	ft_wcharlen(const wint_t c)
+{
+	if (c <= 127)
+		return (1);
+	if (c <= 2047)
+		return (1);
+	if (c <= 65535)
+		return (1);
+	return (4);
+}*/
+
 int	ft_wstrlen(const wchar_t *s)
 {
 	int	len;
 
 	len = 0;
 	while (s[len] != '\0')
-		len++;
+		len ++;
 	return (len);
 }
