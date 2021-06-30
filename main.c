@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/30 19:15:17 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 20:24:50 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/ft_printf.h"
@@ -1061,6 +1061,9 @@ int main()
 	ft_printf("\n");
 	ft_printf("\n");
 
+	ft_printf("-------------------------\n");
+	printf("|   printf (3.99999999) : %f|\n", 3.99999999);
+	ft_printf("|ft_printf (3.99999999) : %f|\n", 3.99999999);
 	ft_printf("-------------------------\n");
 	printf("|   printf (3.9999999) : %f|\n", 3.9999999);
 	ft_printf("|ft_printf (3.9999999) : %f|\n", 3.9999999);
