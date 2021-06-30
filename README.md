@@ -23,8 +23,8 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] X
 - [x] %
 - [ ] n
-- [x] f `(precision with more than 20 numbers in variable aren't correct)`
-- [x] e `(precision with more than 20 numbers in variable aren't correct)`
+- [ ] f `(precision with more than 20 numbers in variable aren't correct)` `need to rework precision on ft_ftoa.c (3.99999999, 6) -> 4.000000 and not 3.00000, ft_ftoa.c (3.85, 1) -> 3.9 and not 3.8`
+- [ ] e `(precision with more than 20 numbers in variable aren't correct)`
 - [ ] g 
 
 ### Flag :
@@ -40,7 +40,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] ll (exept for undone specifier)
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
-- [ ] #
+- [x] #
 
 ### Other
 
@@ -48,9 +48,9 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] Norm
 - [x] clean code (harmonizing the code and avoid repetitions)
 - [x] Securisation of memory allocation
-- [ ] Create 2 version for normal and bonuses
-- [ ] Test OK on Tripouille
-- [ ] Test OK on Mazoise
-- [ ] Test OK on Kwevan
-- [ ] Test OK on gavinfielder
-- [ ] test OK on cacharle
+- [ ] Manage Mandatory and Bonuses organisation
+- [ ] Test [Tripouille](https://github.com/Tripouille/printfTester)
+- [ ] Test [Mazoise](https://github.com/Mazoise/42TESTERS-PRINTF)
+- [ ] Test [Kwevan](https://github.com/Kwevan/PRINTF_TESTER)
+- [ ] Test [gavinfielder](https://github.com/gavinfielder/pft)
+- [ ] Test [cacharle](https://github.com/cacharle/ft_printf_test)
