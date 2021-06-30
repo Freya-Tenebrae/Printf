@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 13:30:50 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/30 21:10:25 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/06/30 21:12:18 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,13 +143,14 @@ void	ft_ftoa_do_precision(double *f)
 		}
 		if (tmpnb < 5)
 			resultfound = 1;
-		//if (tmpnb == 5) && ((unsigned long long)f) % 2 != 0 && \
-		//	(unsigned long long)(f * ft_powerten(i)) - \
-		//	((unsigned long long)f) * ft_powerten(i) == 0)
-		//	f += 1;
-		// if no number after do round to even number.
 	}
 }
+
+/*	if (tmpnb == 5) && ((unsigned long long)f) % 2 != 0 && \
+		(unsigned long long)(f * ft_powerten(i)) - \
+		((unsigned long long)f) * ft_powerten(i) == 0)
+		f += 1;
+		if no number after do round to even number. */
 
 static char	*ft_nftoa_putinstr(double f, int len, int precision, char **str)
 {
