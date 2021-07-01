@@ -52,17 +52,12 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
 
-### Other
+### Tester :
 
-- [x] Leaks
-- [x] Norm
-- [x] clean code (harmonizing the code and avoid repetitions)
-- [x] Securisation of memory allocation
-- [ ] Manage Mandatory and Bonuses organisation
-- [x] Test [Tripouille](https://github.com/Tripouille/printfTester)
-- [x] Test [Mazoise](https://github.com/Mazoise/42TESTERS-PRINTF)
-- [x] Test [Kwevan](https://github.com/Kwevan/PRINTF_TESTER)
-- [x] Test [gavinfielder](https://github.com/gavinfielder/pft)
-- [x] Test [cacharle](https://github.com/cacharle/ft_printf_test)
+- [x] [Tripouille](https://github.com/Tripouille/printfTester)
+- [x] [Mazoise](https://github.com/Mazoise/42TESTERS-PRINTF)
+- [x] [Kwevan](https://github.com/Kwevan/PRINTF_TESTER)
+- [x] [gavinfielder](https://github.com/gavinfielder/pft)
+- [x] [cacharle](https://github.com/cacharle/ft_printf_test)
 
 some "error" are present on the tester of cacharle : they are due to the size of the flag Width (more than 10 000). These test work properly on "hand writen" main, but not on him test (memory error an malloc --> my ft_printf stop and send -1).
