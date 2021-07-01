@@ -47,7 +47,7 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] #
 - [x] +
 - [x] Space
-- [x] l (exept for undone specifier) `c and s doesn't work correctly - lc and ls doesn't work for original printf - not tested by the moulinette`
+- [x] l (exept for undone specifier) `c and s aren't verified - lc and ls doesn't work for original printf - not tested by the moulinette`
 - [x] ll (exept for undone specifier)
 - [x] h (exept for undone specifier)
 - [x] hh (exept for undone specifier)
