@@ -1,4 +1,4 @@
-# Printf
+# ft_printf
 
 Ce dépôt contiens ma solution au projet `ft_printf` de 42 (Paris).
 
