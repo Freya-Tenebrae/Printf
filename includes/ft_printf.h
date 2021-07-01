@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 17:31:56 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/30 19:14:37 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:47:38 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ typedef struct s_value_printf
 /*                                 MAIN PART                                  */
 /* ************************************************************************** */
 int			ft_printf(const char *input, ...);
-int			ft_parsing(char **str, t_value_printf *value_printf, va_list *arg);
-int			ft_get_content(t_value_printf *value_printf, va_list *arg);
+int			ft_parsing(char **pstr, t_value_printf *value_printf, \
+				va_list *arg, int size);
+int			ft_get_content(t_value_printf *value_printf, va_list *arg, \
+				int size);
 /* ************************************************************************** */
 /*                                 SPECIFIER                                  */
 /* ************************************************************************** */
@@ -52,7 +54,7 @@ int			ft_printf_f_conditionning_1(t_value_printf *value_printf, double f);
 int			ft_printf_specifier_g(t_value_printf *value_printf, va_list *arg, \
 				int is_upper);
 int			ft_printf_specifier_i(t_value_printf *value_printf, va_list *arg);
-/* *********************************** n ************************************ */
+int			ft_printf_specifier_n(va_list *arg, int size);
 int			ft_printf_specifier_o(t_value_printf *value_printf, va_list *arg);
 int			ft_printf_specifier_p(t_value_printf *value_printf, va_list *arg);
 int			ft_printf_specifier_s(t_value_printf *value_printf, va_list *arg);

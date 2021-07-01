@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 00:34:26 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/24 07:09:03 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:09:38 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ static int	ft_update_from_arg(char **pstr, va_list *arg, int size)
 	int				j;
 	t_value_printf	value_printf;
 
-	(void)size;
 	if (ft_init_value_lst(&value_printf) != 0)
 		return (-1);
-	j = ft_parsing(pstr, &value_printf, arg);
+	j = ft_parsing(pstr, &value_printf, arg, size);
 	free(value_printf.flags);
 	free(value_printf.length);
 	if (j == -1)

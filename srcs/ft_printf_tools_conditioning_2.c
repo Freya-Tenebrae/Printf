@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 03:58:00 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/30 19:15:01 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:10:20 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,8 @@ int	ft_printf_conditionning_precision_f(t_value_printf *value_printf, \
 	char	*tmp1;
 	char	*tmp2;
 
-	if (value_printf->precision == 0 && value_printf->is_precision == 0)
+	if ((value_printf->precision == 0 && value_printf->is_precision == 0) || \
+		value_printf->precision < 0)
 		value_printf->precision = 6;
 	tmp1 = ft_nftoa(f, value_printf->precision);
 	if (!tmp1)

@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:21:41 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/30 20:24:50 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/01 13:49:00 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "includes/ft_printf.h"
@@ -1062,6 +1062,38 @@ int main()
 	ft_printf("\n");
 
 	ft_printf("-------------------------\n");
+	printf("|   printf( .0f-> 1.5) :% .0f|\n", 1.5);
+	ft_printf("|ft_printf( .0f-> 1.5) :% .0f|\n", 1.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f-> 2.5) :% .0f|\n", 2.5);
+	ft_printf("|ft_printf( .0f-> 2.5) :% .0f|\n", 2.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f-> 3.5) :% .0f|\n", 3.5);
+	ft_printf("|ft_printf( .0f-> 3.5) :% .0f|\n", 3.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f-> 4.5) :% .0f|\n", 4.5);
+	ft_printf("|ft_printf( .0f-> 4.5) :% 2.0f|\n", 4.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f->-1.5) :% .0f|\n", -1.5);
+	ft_printf("|ft_printf( .0f->-1.5) :% .0f|\n", -1.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f->-2.5) :% .0f|\n", -2.5);
+	ft_printf("|ft_printf( .0f->-2.5) :% .0f|\n", -2.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f->-3.5) :% .0f|\n", -3.5);
+	ft_printf("|ft_printf( .0f->-3.5) :% .0f|\n", -3.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f->-3.5) :% .0f|\n", -4.5);
+	ft_printf("|ft_printf( .0f->-3.5) :% .0f|\n", -4.5);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f-> 1.51) :% .0f|\n", 1.51);
+	ft_printf("|ft_printf( .0f-> 1.51) :% .0f|\n", 1.51);
+	ft_printf("---------------------------\n");
+	printf("|   printf( .0f-> 2.51) :% .0f|\n", 2.51);
+	ft_printf("|ft_printf( .0f-> 2.51) :% .0f|\n", 2.51);
+	ft_printf("---------------------------\n");
+
+	ft_printf("-------------------------\n");
 	printf("|   printf (3.99999999) : %f|\n", 3.99999999);
 	ft_printf("|ft_printf (3.99999999) : %f|\n", 3.99999999);
 	ft_printf("-------------------------\n");
@@ -1073,5 +1105,35 @@ int main()
 	ft_printf("-------------------------\n");
 	printf("|   printf (.1|-3.85) : %.1f|\n", -3.85);
 	ft_printf("|ft_printf (.1|-3.85) : %.1f|\n", -3.85);
+	ft_printf("-------------------------\n");
+	printf("|   printf (-56.2012685) : %.1f|\n", -56.2012685);
+	ft_printf("|ft_printf (-56.2012685) : %.1f|\n", -56.2012685);
+	ft_printf("-------------------------\n");
+	printf("|   printf (.-1|0.0) : %.*f|\n", -1, 0.0);
+	ft_printf("|ft_printf (.-1|0.0) : %.*f|\n", -1, 0.0);
+	ft_printf("-------------------------\n");
+	printf("|   printf (10.-1|0.0) : %10.*f|\n", -1, 0.0);
+	ft_printf("|ft_printf (10.-1|0.0) : %10.*f|\n", -1, 0.0);
+	ft_printf("-------------------------\n");
+	printf("|   printf (10|0.0) : %10f|\n", 0.0);
+	ft_printf("|ft_printf (10|0.0) : %10f|\n", 0.0);
+	ft_printf("-------------------------\n");
+	printf("|   printf (.2|8,125) : %.2f|\n", 8.125);
+	ft_printf("|ft_printf (.2|8,125) : %.2f|\n", 8.125);
+	ft_printf("-------------------------\n");
+	printf("|   printf (.2|8,1251) : %.2f|\n", 8.1251);
+	ft_printf("|ft_printf (.2|8,1251) : %.2f|\n", 8.1251);
+	ft_printf("-------------------------\n");
+	printf("|   printf (.2|8,12501) : %.2f|\n", 8.12501);
+	ft_printf("|ft_printf (.2|8,12501) : %.2f|\n", 8.12501);
+	ft_printf("-------------------------\n");
+	printf("|   printf (.2|8,125001) : %.2f|\n", 8.125001);
+	ft_printf("|ft_printf (.2|8,125001) : %.2f|\n", 8.125001);
+	ft_printf("-------------------------\n");
+	printf("|   printf (.2|8,12500000001) : %.2f|\n", 8.12500000001);
+	ft_printf("|ft_printf (.2|8,12500000001) : %.2f|\n", 8.12500000001);
+	ft_printf("-------------------------\n");
+	printf("|   printf (-99.999999) : %f|\n", -99.999999);
+	ft_printf("|ft_printf (-99.999999) : %f|\n", -99.999999);
 	ft_printf("-------------------------\n");
 }

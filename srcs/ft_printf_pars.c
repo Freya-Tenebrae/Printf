@@ -6,7 +6,7 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:17:59 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/30 19:14:41 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:09:44 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,8 @@ static int	ft_get_length(char **pstr, t_value_printf *value_printf)
 	return (0);
 }
 
-int	ft_parsing(char **pstr, t_value_printf *value_printf, va_list *arg)
+int	ft_parsing(char **pstr, t_value_printf *value_printf, va_list *arg, \
+	int size)
 {
 	if (ft_get_flags(pstr, value_printf) < 0)
 		return (-1);
@@ -112,5 +113,5 @@ int	ft_parsing(char **pstr, t_value_printf *value_printf, va_list *arg)
 		return (-1);
 	value_printf->specifier = **pstr;
 	*pstr += 1;
-	return (ft_get_content(value_printf, arg));
+	return (ft_get_content(value_printf, arg, size));
 }

@@ -6,16 +6,17 @@
 /*   By: cmaginot <cmaginot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 11:02:22 by cmaginot          #+#    #+#             */
-/*   Updated: 2021/06/25 08:25:46 by cmaginot         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:09:42 by cmaginot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_get_content2(t_value_printf *value_printf, va_list *arg)
+static int	ft_get_content2(t_value_printf *value_printf, va_list *arg, \
+	int size)
 {
 	if (value_printf->specifier == 'n')
-		return (-1);
+		return (ft_printf_specifier_n(arg, size));
 	if (value_printf->specifier == 'o')
 		return (ft_printf_specifier_o(value_printf, arg));
 	if (value_printf->specifier == 'f')
@@ -31,7 +32,7 @@ static int	ft_get_content2(t_value_printf *value_printf, va_list *arg)
 	return (-1);
 }
 
-int	ft_get_content(t_value_printf *value_printf, va_list *arg)
+int	ft_get_content(t_value_printf *value_printf, va_list *arg, int size)
 {
 	if (value_printf->specifier == 'c')
 		return (ft_printf_specifier_c(value_printf, arg));
@@ -49,5 +50,5 @@ int	ft_get_content(t_value_printf *value_printf, va_list *arg)
 		return (ft_printf_specifier_x(value_printf, arg, 1));
 	if (value_printf->specifier == 'p')
 		return (ft_printf_specifier_p(value_printf, arg));
-	return (ft_get_content2(value_printf, arg));
+	return (ft_get_content2(value_printf, arg, size));
 }
