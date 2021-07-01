@@ -35,11 +35,11 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 ### Bonus :
 
-#### Specifier :
+#### Specifier (droped) :
 
 - [ ] n
-- [ ] f `(precision with more than 20 numbers in variable aren't correct)` `need to rework precision on ft_ftoa.c (3.99999999, 6) -> 4.000000 and not 3.00000, ft_ftoa.c (3.85, 1) -> 3.9 and not 3.8`
-- [ ] e `(precision with more than 20 numbers in variable aren't correct)`
+- [ ] f `precision in particular case doesn't work`
+- [ ] e `precision in particular case doesn't work`
 - [ ] g 
 
 #### Flag :
@@ -59,8 +59,10 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] clean code (harmonizing the code and avoid repetitions)
 - [x] Securisation of memory allocation
 - [ ] Manage Mandatory and Bonuses organisation
-- [ ] Test [Tripouille](https://github.com/Tripouille/printfTester)
-- [ ] Test [Mazoise](https://github.com/Mazoise/42TESTERS-PRINTF)
-- [ ] Test [Kwevan](https://github.com/Kwevan/PRINTF_TESTER)
-- [ ] Test [gavinfielder](https://github.com/gavinfielder/pft)
-- [ ] Test [cacharle](https://github.com/cacharle/ft_printf_test)
+- [x] Test [Tripouille](https://github.com/Tripouille/printfTester)
+- [x] Test [Mazoise](https://github.com/Mazoise/42TESTERS-PRINTF)
+- [x] Test [Kwevan](https://github.com/Kwevan/PRINTF_TESTER)
+- [x] Test [gavinfielder](https://github.com/gavinfielder/pft)
+- [x] Test [cacharle](https://github.com/cacharle/ft_printf_test)
+
+some "error" are present on the tester of cacharle : they are due to the size of the flag Width (more than 10 000). These test work properly on "hand writen" main, but not on him test (memory error an malloc --> my ft_printf stop and send -1).
