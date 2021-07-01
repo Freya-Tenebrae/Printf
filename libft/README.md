@@ -1,4 +1,4 @@
-# Libft
+# libft
 
 Ce dépôt contiens ma solution au projet `libft` de 42 (Paris).
 
