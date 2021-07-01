@@ -29,7 +29,3 @@ Test done on a `MacBook Air (M1, 2020)` under `macOS Big Sur Version 11.2.3` and
 > [libftdestructor](https://github.com/t0mm4rx/libftdestructor) by [t0mm4rx](https://github.com/t0mm4rx)
 
 ![results](https://github.com/Freya-Tenebrae/Libft/blob/main/result_libftDestructor.png)
-
-## Todo
-
-need to fix some memory leak, and maybe pass libft destructor and war machinee
