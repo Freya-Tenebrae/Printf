@@ -8,6 +8,43 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/cmaginot/ft_printf)](https://github.com/JaeSeoKim/badge42)
 
+## Exemple of Uses
+
+```c
+ #include "includes/ft_printf.h"
+
+int	main(void)
+{
+	const int		i = 42;
+	const char		c = 'c';
+	const wint_t	cw = u'Ϡ';
+	const char		*s = "coucou";
+	const wchar_t	sw[] = {u'Ϡ', u'Ϫ', u'Ϯ', u'ϖ', u'ϰ', u'Ж', u'໘', u'⤐', \
+		u'⧲', 0};
+
+	ft_printf("c     : |%c|\ncw    : |%lc|\ns     : |%s|\ns     : |%ls|\n", \
+		c, cw, s, sw);
+	ft_printf("i     : |%i|\no     : |%o|\nx     : |%x|\nX     : |%X|\n", \
+		i, i, i, i);
+	ft_printf("p(&i) : |%p|\n", &i);
+}
+
+```
+```shell
+gcc -Wall -Werror -Wextra -fsanitize=address -g3 main.c libftprintf.a && ./a.out
+```
+```
+c     : |c|
+cw    : |Ϡ|
+s     : |coucou|
+s     : |ϠϪϮϖϰЖ໘⤐⧲|
+i     : |42|
+o     : |52|
+x     : |2a|
+X     : |2A|
+p(&i) : |0x7ffee6b859e0|
+```
+
 ## Avancement / Advancement
 
 ### Mandatory :
@@ -61,40 +98,3 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 - [x] [cacharle](https://github.com/cacharle/ft_printf_test)
 
 some "error" are present on the tester of cacharle : they are due to the size of the flag Width (more than 10 000). These test work properly on "hand writen" main, but not on him test (memory error an malloc --> my ft_printf stop and send -1).
-
-### Exemple of Uses
-
-```c
- #include "includes/ft_printf.h"
-
-int	main(void)
-{
-	const int		i = 42;
-	const char		c = 'c';
-	const wint_t	cw = u'Ϡ';
-	const char		*s = "coucou";
-	const wchar_t	sw[] = {u'Ϡ', u'Ϫ', u'Ϯ', u'ϖ', u'ϰ', u'Ж', u'໘', u'⤐', \
-		u'⧲', 0};
-
-	ft_printf("c     : |%c|\ncw    : |%lc|\ns     : |%s|\ns     : |%ls|\n", \
-		c, cw, s, sw);
-	ft_printf("i     : |%i|\no     : |%o|\nx     : |%x|\nX     : |%X|\n", \
-		i, i, i, i);
-	ft_printf("p(&i) : |%p|\n", &i);
-}
-
-```
-```shell
-gcc -Wall -Werror -Wextra -fsanitize=address -g3 main.c libftprintf.a && ./a.out
-```
-```
-c     : |c|
-cw    : |Ϡ|
-s     : |coucou|
-s     : |ϠϪϮϖϰЖ໘⤐⧲|
-i     : |42|
-o     : |52|
-x     : |2a|
-X     : |2A|
-p(&i) : |0x7ffee6b859e0|
-```
