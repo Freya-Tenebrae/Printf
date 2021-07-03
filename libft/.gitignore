@@ -1,6 +1,0 @@
-a.out
-*.o
-libft.a
-main.c
-.DS_Store
-libftTester/*
