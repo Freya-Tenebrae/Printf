@@ -8,7 +8,21 @@ This Repositorie contains my solution to the project `ft_printf` of 42 (Paris).
 
 [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/cmaginot/ft_printf)](https://github.com/JaeSeoKim/badge42)
 
-## Exemple of Uses
+## Using push_swap
+
+### Cloning
+
+```shell
+git clone --recurse-submodules https://github.com/Freya-Tenebrae/ft_printf.git
+```
+
+### Compilation
+
+```shell
+make
+```
+
+### Exemple of uses
 
 ```c
  #include "includes/ft_printf.h"
